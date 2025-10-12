@@ -12,8 +12,8 @@ export const educationData: EducationItemI[] = [
     achievements: ["Cum Laude"],
   },
   {
-    degree: "Bachelor of Science",
-    field: "Software Engineering",
+    degree: "Technical-Vocational Livelihood",
+    field: "Information and Communication Technology",
     institution: "AMA Computer College - Las Piñas",
     location: "Las Piñas City, Philippines",
     period: "2019 — 2021",
