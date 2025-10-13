@@ -4,7 +4,7 @@ interface SimpleDIviderProps {
 
 const SimpleDivider = ({ label }: SimpleDIviderProps) => {
   return (
-    <div className="w-full mx-auto px-4 py-12">
+    <div className="w-full mx-auto px-4">
       <div className="relative flex items-center justify-center">
         
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
