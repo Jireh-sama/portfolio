@@ -104,7 +104,25 @@
     transform: rotate(-5deg) scale(0.9);
     }
   }
-}
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite
+;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }}
 
 :root {
 
@@ -178,7 +196,7 @@
   --background: oklch(0.141 0.005 285.823);
 
   --foreground: oklch(0.985 0 0);
-  
+
   --card: oklch(0.21 0.006 285.885);
 
   --card-foreground: oklch(0.985 0 0);
