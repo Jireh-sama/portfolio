@@ -31,7 +31,6 @@ const App = () => {
       />
       <div className="max-w-6xl mx-auto px-6 space-y-14" id="smooth-content">
         <HeroSection />
-        <CTAButtonsSection />
         <SimpleDivider label="WORK EXPERIENCE" />
         <WorkExperienceSection
           workExperienceList={workExperienceData}
