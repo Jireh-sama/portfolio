@@ -27,3 +27,8 @@ export interface NavItemI {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   fn: () => void
 }
+
+export interface TechStackItemI {
+  logo: React.ReactNode
+  name: string
+}

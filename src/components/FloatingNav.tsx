@@ -2,22 +2,23 @@ import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { useState } from "react";
 import type { NavItemI } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { LuBriefcase, LuGraduationCap, LuHouse } from "react-icons/lu";
+import { LuBriefcase, LuGraduationCap, LuHouse, LuLayers } from "react-icons/lu";
 
 interface FloatingNavProps {
   scrollToHome: () => void;
   scrollToEducation: () => void;
   scrollToExperience: () => void;
+  scrollToTechStack: () => void;
 }
-const FloatingNav = ({ scrollToHome, scrollToEducation, scrollToExperience }: FloatingNavProps) => {
+const FloatingNav = ({ scrollToHome, scrollToEducation, scrollToExperience, scrollToTechStack }: FloatingNavProps) => {
   const [selectedTab, setSelectedTab] = useState<NavItemI["name"]>("Home");
 
   const navItems: NavItemI[] = [
     { name: "Home", icon: LuHouse, fn: scrollToHome },
-    // { name: "Tech Stack", icon: Layers },
     { name: "Experience", icon: LuBriefcase, fn: scrollToExperience },
     // { name: "Projects", href: "#projects", icon: Folder },
     { name: "Education", icon: LuGraduationCap, fn: scrollToEducation },
+    { name: "Tech Stack", icon: LuLayers, fn: scrollToTechStack },
   ];
 
   const handleClickItem = (name: NavItemI['name'], callback: () => void) => {
