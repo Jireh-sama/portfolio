@@ -1,6 +1,5 @@
 import FloatingNav from "./components/FloatingNav";
 import ScreenSizeIndicator from "./components/ScreenSizeIndicaator";
-import CTAButtonsSection from "./components/section/CTAButtonsSection";
 import EducationSection from "./components/section/EducationSection";
 import FooterSection from "./components/section/FooterSection";
 import HeroSection from "./components/section/HeroSection";
