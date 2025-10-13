@@ -1,7 +1,7 @@
 import { FileDown, Github, Linkedin, Mail } from "lucide-react";
-import TileButton from "../TileButton";
+import TileButton from "./TileButton";
 
-const CTAButtonsSection = () => {
+const CTAButtons = () => {
   const socialButtons = [
     { icon: <Github className="size-5" /> },
     { icon: <Linkedin className="size-5" /> },
@@ -11,14 +11,12 @@ const CTAButtonsSection = () => {
   ];
 
   return (
-    <section>
-      <div className="flex flex-wrap space-x-4 space-y-4">
-        {socialButtons.map((social) => (
-          <TileButton icon={social.icon} />
-        ))}
-      </div>
-    </section>
+    <div className="flex flex-wrap space-x-4 space-y-4">
+      {socialButtons.map((social) => (
+        <TileButton icon={social.icon} />
+      ))}
+    </div>
   );
 };
 
-export default CTAButtonsSection;
+export default CTAButtons;
