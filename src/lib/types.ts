@@ -20,3 +20,10 @@ export interface WorkExperienceItemI {
   technologies: string[]
 
 }
+
+type NavNames = 'Home' | 'Experience' | 'Education' | 'Tech Stack' | 'Projects'
+export interface NavItemI {
+  name: NavNames
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  fn: () => void
+}

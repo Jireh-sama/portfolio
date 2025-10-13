@@ -14,8 +14,13 @@ import {
 import useSectionScroll from "./hooks/useSectionScroll";
 
 const App = () => {
-  const { educationSectionRef, handleScrollToEducation, handleScrollToTop } =
-    useSectionScroll();
+  const {
+    educationSectionRef,
+    experienceSectionRef,
+    handleScrollToEducation,
+    handleScrollToTop,
+    handleScrollToExperience,
+  } = useSectionScroll();
 
   return (
     <main className="min-h-[100vh]" id="smooth-wrapper">
@@ -23,12 +28,16 @@ const App = () => {
       <FloatingNav
         scrollToHome={handleScrollToTop}
         scrollToEducation={handleScrollToEducation}
+        scrollToExperience={handleScrollToExperience}
       />
       <div className="max-w-6xl mx-auto px-6 space-y-14" id="smooth-content">
         <HeroSection />
         <CTAButtonsSection />
         <SimpleDivider label="WORK EXPERIENCE" />
-        <WorkExperienceSection workExperienceList={workExperienceData} />
+        <WorkExperienceSection
+          workExperienceList={workExperienceData}
+          ref={experienceSectionRef}
+        />
         <SimpleDivider label="EDUCATION" />
         <EducationSection
           educationList={educationData}
