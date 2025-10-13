@@ -42,7 +42,7 @@ export const workExperienceData: WorkExperienceItemI[] = [
     company:
       "Archipelago Philippine Seafarers’ Training Institute, Inc. (APSTII)",
     location: "Las Piñas City, Philippines",
-    period: "April 2024 - June 2024",
+    period: "April 2025 - June 2025",
     duration: "3 months",
     current: false,
     description:
