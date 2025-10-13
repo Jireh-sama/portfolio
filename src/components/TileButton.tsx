@@ -6,7 +6,6 @@ type TileButtonProps = {
   icon: ReactNode;
   onClick?: () => void;
   bgColor?: string,
-  shadowColor?: string,
   className?: string; // optional for custom sizing/colors if needed
 };
 
@@ -14,7 +13,6 @@ const TileButton = ({
   icon,
   onClick,
   bgColor="bg-blue-500",
-  shadowColor="#1E40AF",
   className = "",
 }: TileButtonProps) => {
   const [hovered, setHovered] = useState(false);
@@ -30,7 +28,7 @@ const TileButton = ({
         ${
           hovered
             ? "translate-y-1 shadow-[0_0px_0_0_#2a2a2a]"
-            : `shadow-[0_6px_0_0_${shadowColor}]`
+            : `shadow-[0_6px_0_0_#1D4ED8]`
         }
         before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-b 
         before:from-transparent before:to-black/20 before:opacity-60

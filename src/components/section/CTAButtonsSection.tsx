@@ -14,9 +14,8 @@ const CTAButtonsSection = () => {
     <section>
       <div className="flex flex-wrap space-x-4 space-y-4">
         {socialButtons.map((social) => (
-          <TileButton icon={social.icon} shadowColor="#1D4ED8"/>
+          <TileButton icon={social.icon} />
         ))}
-
       </div>
     </section>
   );
