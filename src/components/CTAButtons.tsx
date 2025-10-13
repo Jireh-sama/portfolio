@@ -1,13 +1,20 @@
-import { FileDown, Github, Linkedin, Mail } from "lucide-react";
 import TileButton from "./TileButton";
+import { LuFileDown, LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
 
 const CTAButtons = () => {
   const socialButtons = [
-    { icon: <Github className="size-5" /> },
-    { icon: <Linkedin className="size-5" /> },
-    { icon: <Mail className="size-5" /> },
-    { icon: <FileDown className="size-5" /> },
-    { icon: <span>Explore More</span> },
+    { icon: <LuGithub className="size-5" /> },
+    { icon: <LuLinkedin className="size-5" /> },
+    { icon: <LuMail className="size-5" /> },
+    {
+      icon: (
+        <>
+          <LuFileDown className="size-5" />
+          &nbsp;
+          <p>Download CV</p>
+        </>
+      ),
+    },
   ];
 
   return (

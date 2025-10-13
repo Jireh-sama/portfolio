@@ -1,5 +1,5 @@
 import type { EducationItemI } from "@/lib/types";
-import { GraduationCap } from "lucide-react";
+import { LuGraduationCap } from "react-icons/lu";
 interface EducationItemProps {
   item: EducationItemI;
 }
@@ -28,7 +28,7 @@ const EducationItem = ({ item }: EducationItemProps) => {
       <div className="pl-8 md:pl-8 space-y-3">
         <header className="flex items-start gap-3">
           <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-            <GraduationCap />
+            <LuGraduationCap />
           </div>
           <div className="flex-1 min-w-0">
             <h3 className="text-xl font-semibold text-foreground mb-1 text-balance">

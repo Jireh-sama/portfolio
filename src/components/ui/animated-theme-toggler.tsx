@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react"
-import { Moon, Sun } from "lucide-react"
 import { flushSync } from "react-dom"
 
 import { cn } from "@/lib/utils"
+import { LuMoon, LuSun } from "react-icons/lu"
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -76,7 +76,7 @@ export const AnimatedThemeToggler = ({
       className={cn(className)}
       {...props}
     >
-      {isDark ? <Sun className="size-5 group-hover:text-white dark:group-hover:text-blue-600" /> : <Moon className="size-5 group-hover:text-white dark:group-hover:text-blue-600"/>}
+      {isDark ? <LuSun className="size-5 group-hover:text-white dark:group-hover:text-blue-600" /> : <LuMoon className="size-5 group-hover:text-white dark:group-hover:text-blue-600"/>}
     </button>
   )
 }

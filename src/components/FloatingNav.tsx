@@ -1,8 +1,8 @@
-import { Home, Briefcase, GraduationCap } from "lucide-react";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { useState } from "react";
 import type { NavItemI } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { LuBriefcase, LuGraduationCap, LuHouse } from "react-icons/lu";
 
 interface FloatingNavProps {
   scrollToHome: () => void;
@@ -13,11 +13,11 @@ const FloatingNav = ({ scrollToHome, scrollToEducation, scrollToExperience }: Fl
   const [selectedTab, setSelectedTab] = useState<NavItemI["name"]>("Home");
 
   const navItems: NavItemI[] = [
-    { name: "Home", icon: Home, fn: scrollToHome },
+    { name: "Home", icon: LuHouse, fn: scrollToHome },
     // { name: "Tech Stack", icon: Layers },
-    { name: "Experience", icon: Briefcase, fn: scrollToExperience },
+    { name: "Experience", icon: LuBriefcase, fn: scrollToExperience },
     // { name: "Projects", href: "#projects", icon: Folder },
-    { name: "Education", icon: GraduationCap, fn: scrollToEducation },
+    { name: "Education", icon: LuGraduationCap, fn: scrollToEducation },
   ];
 
   const handleClickItem = (name: NavItemI['name'], callback: () => void) => {

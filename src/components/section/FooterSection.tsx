@@ -1,8 +1,4 @@
-import {
-  Github,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
 
 interface FooterSectionProps {
   githubLink: string
@@ -15,17 +11,17 @@ const FooterSection = ({ githubLink, linkedInLink, email }: FooterSectionProps) 
 
   const socialLinks = [
     {
-      icon: <Github className="w-5 h-5" />,
+      icon: <LuGithub className="w-5 h-5" />,
       label: "GitHub",
       href: githubLink,
     },
     {
-      icon: <Linkedin className="w-5 h-5" />,
+      icon: <LuLinkedin className="w-5 h-5" />,
       label: "LinkedIn",
       href: linkedInLink,
     },
     {
-      icon: <Mail className="w-5 h-5" />,
+      icon: <LuMail className="w-5 h-5" />,
       label: "Email",
       href: email,
     },
