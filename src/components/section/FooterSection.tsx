@@ -2,7 +2,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Heart,
 } from "lucide-react";
 
 interface FooterSectionProps {
@@ -101,10 +100,6 @@ const FooterSection = ({ githubLink, linkedInLink, email }: FooterSectionProps) 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-gray-400 text-center md:text-left">
               © {currentYear} Jireh. All rights reserved.
-            </p>
-            <p className="text-sm text-gray-400 flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" />{" "}
-              using React & Tailwind CSS
             </p>
           </div>
         </section>
