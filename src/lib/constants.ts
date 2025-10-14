@@ -9,7 +9,6 @@ export const educationData: EducationItemI[] = [
     period: "2021 — 2025",
     description:
       "Focused on Object-Oriented Programming, Data Structures, and Human–Computer Interaction, with interests in Machine Learning applications.",
-    achievements: ["Cum Laude"],
   },
   {
     degree: "Technical-Vocational Livelihood",
@@ -19,7 +18,6 @@ export const educationData: EducationItemI[] = [
     period: "2019 — 2021",
     description:
       "Studied Java development, networking fundamentals, and web technologies with an emphasis on software design and user experience.",
-    achievements: ["With High Honors"],
   },
   {
     degree: "High School Diploma",
