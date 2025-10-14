@@ -38,7 +38,7 @@ const FooterSection = ({ githubLink, linkedInLink, email }: FooterSectionProps) 
               Jireh<span className="text-gray-400">.</span>
             </h3>
             <p className="text-gray-400 text-sm mb-4">
-              Full-stack developer passionate about creating beautiful and
+              Web developer passionate about creating beautiful and
               functional web experiences.
             </p>
             <div className="flex gap-3">
