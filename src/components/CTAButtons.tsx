@@ -8,19 +8,24 @@ const CTAButtons = () => {
     { icon: <LuMail className="size-5" /> },
     {
       icon: (
-        <>
+        <a
+          href="/JirehTumbagahanCV.pdf"
+          download="Jireh_Tumbagahan_Resume.pdf"
+          className="flex items-center justify-center"
+        >
           <LuFileDown className="size-5" />
           &nbsp;
           <p>Download CV</p>
-        </>
+        </a>
       ),
+      fn: () => {},
     },
   ];
 
   return (
     <div className="flex flex-wrap space-x-4 space-y-4">
-      {socialButtons.map((social) => (
-        <TileButton icon={social.icon} />
+      {socialButtons.map((social, index) => (
+        <TileButton key={index} icon={social.icon} />
       ))}
     </div>
   );
