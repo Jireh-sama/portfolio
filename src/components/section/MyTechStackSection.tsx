@@ -17,9 +17,8 @@ const MyTechStackSection = forwardRef<HTMLDivElement, MyTechStackSectionProps>(
       />
       <div className="relative overflow-hidden">
         <Marquee
-          className="[--duration:10s] cursor-pointer"
-          pauseOnHover={true}
-        >
+          className="[--duration:20s] cursor-pointer"
+      >
           {techStackList.map((stack) => (
             <div
               key={stack.name}
