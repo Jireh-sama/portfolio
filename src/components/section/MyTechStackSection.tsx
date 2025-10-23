@@ -14,6 +14,7 @@ const MyTechStackSection = forwardRef<HTMLDivElement, MyTechStackSectionProps>(
       <SectionHeader
         title="Tech Stack"
         subtitle="Technologies and tools I work with to build modern applications"
+        centered={true}
       />
       <div className="relative overflow-hidden">
         <Marquee
