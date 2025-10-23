@@ -2,28 +2,53 @@ import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { useState } from "react";
 import type { NavItemI } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { LuBriefcase, LuGraduationCap, LuHouse, LuLayers } from "react-icons/lu";
+import {
+  LuBriefcase,
+  LuFolder,
+  LuGraduationCap,
+  LuHouse,
+  LuLayers,
+} from "react-icons/lu";
 
 interface FloatingNavProps {
-  scrollToHome: () => void;
-  scrollToEducation: () => void;
-  scrollToExperience: () => void;
-  scrollToTechStack: () => void;
+  techStackRef: React.RefObject<HTMLDivElement | null>
+  projectRef: React.RefObject<HTMLDivElement | null>
+  experienceRef: React.RefObject<HTMLDivElement | null>
+  educationRef: React.RefObject<HTMLDivElement | null>
 }
-const FloatingNav = ({ scrollToHome, scrollToEducation, scrollToExperience, scrollToTechStack }: FloatingNavProps) => {
+const FloatingNav = ({
+  techStackRef,
+  projectRef,
+  experienceRef,
+  educationRef
+}: FloatingNavProps) => {
   const [selectedTab, setSelectedTab] = useState<NavItemI["name"]>("Home");
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+   const handleScrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   const navItems: NavItemI[] = [
-    { name: "Home", icon: LuHouse, fn: scrollToHome },
-    { name: "Experience", icon: LuBriefcase, fn: scrollToExperience },
-    // { name: "Projects", href: "#projects", icon: Folder },
-    { name: "Education", icon: LuGraduationCap, fn: scrollToEducation },
-    { name: "Tech Stack", icon: LuLayers, fn: scrollToTechStack },
+    { name: "Home", icon: LuHouse, fn: handleScrollToTop },
+    { name: "Tech Stack", icon: LuLayers, fn: () => handleScrollToSection(techStackRef) },
+    { name: "Projects", icon: LuFolder, fn: () => handleScrollToSection(projectRef) },
+    { name: "Experience", icon: LuBriefcase, fn: () => handleScrollToSection(experienceRef) },
+    { name: "Education", icon: LuGraduationCap, fn: () => handleScrollToSection(educationRef) },
   ];
 
-  const handleClickItem = (name: NavItemI['name'], callback: () => void) => {
-    setSelectedTab(name)
-    callback()
+  const handleClickItem = (name: NavItemI["name"], callback: () => void) => {
+    setSelectedTab(name);
+    callback();
   };
 
   return (
@@ -35,7 +60,8 @@ const FloatingNav = ({ scrollToHome, scrollToEducation, scrollToExperience, scro
             key={item.name}
             className={cn(
               "group relative p-3 rounded-xl transition-all duration-300 hover:bg-blue-500 border border-transparent bg-white/70 dark:bg-white/10",
-              selectedTab === item.name && 'bg-blue-500 text-white dark:text-blue-600'
+              selectedTab === item.name &&
+                "bg-blue-500 text-white dark:text-blue-600"
             )}
           >
             <item.icon
