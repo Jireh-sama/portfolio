@@ -39,7 +39,7 @@ export const workExperienceData: WorkExperienceItemI[] = [
     role: "Information Technology Intern",
     company:
       "Archipelago Philippine Seafarers’ Training Institute, Inc. (APSTII)",
-    logo: "/src/assets/apstii-logo.avif",
+    logo: "/public/images/apstii-logo.avif",
     location: "Las Piñas City, Philippines",
     period: "April 2025 - June 2025",
     duration: "3 months",
@@ -60,14 +60,14 @@ export const projectsData: ProjectItemI[] = [
   {
     title: "City of Bacoor Chatbot",
     description: "This project was built to help the City of Bacoor, Cavite, engage with its citizens more effectively. The system features an NLP.js-powered chatbot for public queries and a comprehensive, secure admin panel for city employees.",
-    image: "/src/assets/chatbot-mockup-cover.avif",
+    image: "/public/images/chatbot-mockup-cover.avif",
     link: "rawr",
     techStack: ["React", "TailwindCSS", "Express.js", "NLP.js", "MongoDB"]
   },
   {
     title: "Enroll Ease",
     description: "The goal of this project was to create a single, reliable source of truth for student enrollment. The system is a Django-based web application that serves two key user groups.",
-    image: "/src/assets/enrollease-mockup-cover.avif",
+    image: "/public/images/enrollease-mockup-cover.avif",
     link: "rawr",
     techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap"]
   }
