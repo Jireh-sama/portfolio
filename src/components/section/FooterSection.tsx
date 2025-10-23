@@ -1,4 +1,4 @@
-import { LuGithub, LuLinkedin, LuMail } from "react-icons/lu";
+import { LuGithub, LuLinkedin } from "react-icons/lu";
 
 interface FooterSectionProps {
   githubLink: string
@@ -19,11 +19,6 @@ const FooterSection = ({ githubLink, linkedInLink, email }: FooterSectionProps) 
       icon: <LuLinkedin className="w-5 h-5" />,
       label: "LinkedIn",
       href: linkedInLink,
-    },
-    {
-      icon: <LuMail className="w-5 h-5" />,
-      label: "Email",
-      href: email,
     },
   ];
 
@@ -70,22 +65,22 @@ const FooterSection = ({ githubLink, linkedInLink, email }: FooterSectionProps) 
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href={`mailto:${email}`}
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                <p
+                  className="text-sm text-gray-400"
                 >
                   {email}
-                </a>
+                </p>
               </li>
               <li className="text-sm text-gray-400">
                 Philippines, Las Piñas
               </li>
               <li>
                 <a
-                  href="#contact"
+                  href="https://mail.google.com/mail/?view=cm&to=jirehtumbagahan@gmail.com&su=Let’s Work Together!&body=Hey%20Jireh,%0D%0A%0D%0AI'd%20love%20to%20talk%20about%20a%20project%20or%20opportunity."
+                  target="_blank"
                   className="inline-block px-6 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white font-medium text-sm hover:bg-gray-700 transition-all"
                 >
-                  Send Message
+                  Send Email
                 </a>
               </li>
             </ul>
