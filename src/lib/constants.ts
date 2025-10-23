@@ -67,7 +67,7 @@ export const projectsData: ProjectItemI[] = [
   {
     title: "Enroll Ease",
     description: "The goal of this project was to create a single, reliable source of truth for student enrollment. The system is a Django-based web application that serves two key user groups.",
-    image: "/public/images/enrollease-mockup-cover.avif",
+    image: "/images/enrollease-mockup-cover.avif",
     link: "rawr",
     techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap"]
   }
