@@ -11,6 +11,7 @@ export interface EducationItemI {
 export interface WorkExperienceItemI {
   role: string
   company: string
+  logo: string
   location: string
   period: string
   duration: string
@@ -19,6 +20,14 @@ export interface WorkExperienceItemI {
   achievements: string[]
   technologies: string[]
 
+}
+
+export interface ProjectItemI {
+  title: string
+  description: string
+  image: string
+  link: string
+  techStack: string[]
 }
 
 type NavNames = 'Home' | 'Experience' | 'Education' | 'Tech Stack' | 'Projects'
