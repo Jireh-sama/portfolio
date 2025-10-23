@@ -7,38 +7,41 @@ import WorkExperienceSection from "./components/section/WorkExperienceSection";
 import SimpleDivider from "./components/SimpleDIvider";
 import {
   educationData,
+  projectsData,
   socialContacts,
   workExperienceData,
 } from "./lib/constants";
-import useSectionScroll from "./hooks/useSectionScroll";
 import MyTechStackSection from "./components/section/MyTechStackSection";
 import { techStackData } from "./components/TechStackData";
+import { BackgroundRippleEffect } from "./components/ui/background-ripple-effect";
+import ProjectSection from "./components/section/ProjectSection";
+import { useRef } from "react";
 
 const App = () => {
-  const {
-    educationSectionRef,
-    experienceSectionRef,
-    techStackSectionRef,
-    handleScrollToEducation,
-    handleScrollToTop,
-    handleScrollToExperience,
-    handleScrollToTechStack,
-  } = useSectionScroll();
-
-  
+  const educationSectionRef = useRef<HTMLDivElement>(null);
+  const experienceSectionRef = useRef<HTMLDivElement>(null);
+  const techStackSectionRef = useRef<HTMLDivElement>(null);
+  const projectSectionRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="min-h-[100vh]" id="smooth-wrapper">
-      
+    <main className="min-h-[100vh]">
+      <BackgroundRippleEffect />
       <ScreenSizeIndicator />
       <FloatingNav
-        scrollToHome={handleScrollToTop}
-        scrollToEducation={handleScrollToEducation}
-        scrollToExperience={handleScrollToExperience}
-        scrollToTechStack={handleScrollToTechStack}
+        techStackRef={techStackSectionRef}
+        projectRef={projectSectionRef}
+        experienceRef={experienceSectionRef}
+        educationRef={educationSectionRef}
       />
       <div className="max-w-6xl mx-auto px-6 space-y-14" id="smooth-content">
         <HeroSection />
+        <SimpleDivider label="TECH STACK" />
+        <MyTechStackSection
+          techStackList={techStackData}
+          ref={techStackSectionRef}
+        />
+        <SimpleDivider label="PROJECTS" />
+        <ProjectSection ref={projectSectionRef} projectList={projectsData} />
         <SimpleDivider label="WORK EXPERIENCE" />
         <WorkExperienceSection
           workExperienceList={workExperienceData}
@@ -48,11 +51,6 @@ const App = () => {
         <EducationSection
           educationList={educationData}
           ref={educationSectionRef}
-        />
-        <SimpleDivider label="TECH STACK" />
-        <MyTechStackSection
-          techStackList={techStackData}
-          ref={techStackSectionRef}
         />
       </div>
       <FooterSection
