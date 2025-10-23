@@ -9,8 +9,8 @@ const WorkExperienceItem = ({ exp }: WorkExperienceItemProps) => {
     <div className="group rounded-2xl flex dark:bg-gray-800/30 backdrop-blur-sm border p-6 space-x-5 transition-all duration-300 cursor-pointer">
       <div className="flex-shrink-0 w-20 h-20 p-2 rounded-xl bg-white/5 border dark:border-white/10 flex items-center justify-center">
         <img
-          src="/src/assets/apstii-logo.avif"
-          alt="APSTII Logo"
+          src={exp.logo}
+          alt={exp.company}
           className="w-full h-full"
         />
       </div>
