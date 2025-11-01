@@ -10,7 +10,7 @@ const SectionHeader = ({
   centered?: boolean;
 }) => {
   return (
-    <div className={cn("mb-12", centered && "text-center")}>
+    <div className={cn("my-12", centered && "text-center")}>
       <h2 className="text-4xl font-bold text-foreground mb-3 text-balance">
         {title}
       </h2>
