@@ -1,4 +1,8 @@
-import type { EducationItemI, ProjectItemI, WorkExperienceItemI } from "./types";
+import type {
+  EducationItemI,
+  ProjectItemI,
+  WorkExperienceItemI,
+} from "./types";
 
 export const educationData: EducationItemI[] = [
   {
@@ -58,17 +62,67 @@ export const workExperienceData: WorkExperienceItemI[] = [
 
 export const projectsData: ProjectItemI[] = [
   {
+    id: "city-of-bacoor-chatbot",
     title: "City of Bacoor Chatbot",
-    description: "This project was built to help the City of Bacoor, Cavite, engage with its citizens more effectively. The system features an NLP.js-powered chatbot for public queries and a comprehensive, secure admin panel for city employees.",
+    description:
+      "This project was built to help the City of Bacoor, Cavite, engage with its citizens more effectively. The system features an NLP.js-powered chatbot for public queries and a comprehensive, secure admin panel for city employees.",
+    features: [
+      "NLP-powered chatbot for instant responses",
+      "Secure admin panel for content management",
+      "User analytics dashboard",
+      "Query escalation system",
+    ],
     image: "/images/chatbot-mockup-cover.avif",
-    link: "rawr",
-    techStack: ["React", "TailwindCSS", "Express.js", "NLP.js", "MongoDB"]
+    githubLink: "https://github.com/Jireh-sama",
+    liveLink: "#",
+    techStack: ["React", "TailwindCSS", "Express.js", "NLP.js", "MongoDB"],
+    problemsAndSolutions: [
+      {
+        title: "Natural Language Understanding",
+        problem:
+          "Processing diverse user queries with varying phrasing and local dialect required a sophisticated NLP implementation.",
+        solution:
+          "Implemented NLP.js with custom intent training and entity recognition, supporting multiple query variations and local terminologies.",
+      },
+      {
+        title: "Scalability & Performance",
+        problem:
+          "The system needed to handle high concurrent user loads during peak hours without degrading response times.",
+        solution:
+          "Utilized Redis for caching frequent queries and implemented connection pooling in Express.js to optimize database interactions.",
+      },
+    ],
   },
   {
+    id: "enroll-ease",
     title: "Enroll Ease",
-    description: "The goal of this project was to create a single, reliable source of truth for student enrollment. The system is a Django-based web application that serves two key user groups.",
+    description:
+      "The goal of this project was to create a single, reliable source of truth for student enrollment. The system is a Django-based web application that serves two key user groups.",
+    features: [
+      "Online student registration and course selection",
+      "Admin dashboard for managing enrollments",
+      "Automated class scheduling",
+      "Secure student data management",
+    ],
     image: "/images/enrollease-mockup-cover.avif",
-    link: "rawr",
-    techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap"]
-  }
-]
+    githubLink: "https://github.com/Jireh-sama",
+    liveLink: "#",
+    techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap"],
+    problemsAndSolutions: [
+      {
+        title: "Data Integrity and Validation",
+        problem:
+          "Ensuring that all student data was accurate, complete, and valid upon submission was critical to prevent administrative errors.",
+        solution:
+          "Leveraged Django's ORM with built-in model validation and created custom forms with server-side checks to enforce strict data rules.",
+      },
+      {
+        title: "User Experience for Admins",
+        problem:
+          "The administrative backend needed to be intuitive for non-technical staff to manage thousands of student records and course schedules.",
+        solution:
+          "Customized the Django Admin interface to provide a clean, organized, and searchable dashboard with bulk-action capabilities for efficient management.",
+      },
+    ],
+  },
+];
