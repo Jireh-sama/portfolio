@@ -1,10 +1,11 @@
 import { projectsData } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { LuGithub, LuExternalLink, LuArrowLeft } from "react-icons/lu";
+import { LuGithub, LuExternalLink } from "react-icons/lu";
 import { useEffect } from "react";
-import { NavLink, useParams } from "react-router";
+import { useParams } from "react-router";
 import ItemNotFound from "../feedback/ItemNotFound";
+import BackButton from "../BackButton";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
@@ -27,21 +28,14 @@ const ProjectDetails = () => {
 
   return (
     <>
-      <div className="my-12">
-        <Button variant={"outline"} asChild>
-          <NavLink to="/projects">
-            <LuArrowLeft />
-            Back to all projects
-          </NavLink>
-        </Button>
-      </div>
+      <BackButton />
 
       <main>
         <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-balance">
           {project.title}
         </h1>
-        <p className="text-lg text-muted-foreground mb-8 text-pretty">
-          {project.description}
+        <p className="text-lg text-muted-foreground mb-8 text-pretty whitespace-pre-line">
+          {project.about}
         </p>
 
         <img
@@ -83,16 +77,19 @@ const ProjectDetails = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4">Links</h3>
               <div className="flex flex-col items-start gap-4">
-                <Button asChild className="w-full">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <LuExternalLink className="mr-2 size-4" />
-                    Live Demo
-                  </a>
-                </Button>
+                {project.liveLink && (
+                  <Button asChild className="w-full">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LuExternalLink className="mr-2 size-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+
                 <Button asChild variant="secondary" className="w-full">
                   <a
                     href={project.githubLink}
