@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { projectsData } from "@/lib/constants";
 import ProjectItem from "../ProjectItem";
 import SectionHeader from "../SectionHeader";
+import BackButton from "../BackButton";
 
 const Projects = () => {
   useEffect(() => {
@@ -10,6 +11,7 @@ const Projects = () => {
 
   return (
     <>
+      <BackButton />
       <SectionHeader
         title="My Projects"
         subtitle="Collection of projects that I've built throughout my web development journey"
