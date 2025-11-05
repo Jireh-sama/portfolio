@@ -101,7 +101,7 @@ export const projectsData: ProjectItemI[] = [
     id: "enroll-ease",
     title: "Enroll Ease",
     about:
-      "EnrollEase was developed to streamline and modernize the student enrollment process for educational institutions. The goal was to create a user-friendly platform that simplifies enrollment management for both students and administrators — reducing manual work, improving communication, and ensuring a smoother overall experience. This project was built as part of a freelance commission for a student client who required a fully functional enrollment management web application. It reflects a practical and scalable solution developed using Django, designed to handle real-world enrollment workflows efficiently.",
+      "EnrollEase was developed to streamline and modernize the student enrollment process for educational institutions. The goal was to create a user-friendly platform that simplifies enrollment management for both students and administrators — reducing manual work, improving communication, and ensuring a smoother overall experience. This project was built as part of a freelance commission for a client who required a fully functional enrollment management web application. It reflects a practical and scalable solution developed using Django, designed to handle real-world enrollment workflows efficiently.",
     description:
       "EnrollEase is a Django-based student enrollment management system designed to simplify and automate the enrollment process for educational institutions. It provides dedicated interfaces for students and administrators, enabling efficient handling of applications, announcements, and notifications — all in one streamlined platform.",
     features: [
