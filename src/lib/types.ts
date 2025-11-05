@@ -31,11 +31,12 @@ export interface ProblemSolutionI {
 export interface ProjectItemI {
   id: string
   title: string
+  about: string
   description: string
   features: string[]
   image: string
   githubLink: string
-  liveLink: string
+  liveLink?: string
   techStack: string[]
   problemsAndSolutions?: ProblemSolutionI[]
 }
