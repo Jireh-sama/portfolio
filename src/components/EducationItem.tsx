@@ -1,4 +1,5 @@
 import type { EducationItemI } from "@/lib/types";
+import { HiCheckCircle } from "react-icons/hi";
 import { LuGraduationCap } from "react-icons/lu";
 interface EducationItemProps {
   item: EducationItemI;
@@ -7,7 +8,6 @@ interface EducationItemProps {
 const EducationItem = ({ item }: EducationItemProps) => {
   return (
     <div className="relative md:grid md:grid-cols-[180px_1fr] md:gap-6 group">
-      
       <div className="flex items-start md:justify-end md:pr-8 md:text-right mb-3 md:mb-0">
         <div className="flex items-center gap-3 md:block">
           <div className="relative z-10 flex items-center justify-center md:hidden">
@@ -24,7 +24,7 @@ const EducationItem = ({ item }: EducationItemProps) => {
           <div className="w-3 h-3 rounded-full bg-primary ring-4 ring-background transition-all group-hover:ring-8 group-hover:ring-primary/20" />
         </div>
       </div>
-    
+
       <div className="pl-8 md:pl-8 space-y-3">
         <header className="flex items-start gap-3">
           <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
@@ -54,13 +54,13 @@ const EducationItem = ({ item }: EducationItemProps) => {
         )}
 
         {item.achievements && item.achievements.length > 0 && (
-          <ul className="space-y-1.5 mt-3">
+          <ul className="space-y-2 mt-4">
             {item.achievements.map((achievement, i) => (
               <li
                 key={i}
-                className="text-sm text-muted-foreground flex items-start gap-2"
+                className="text-sm text-muted-foreground flex items-start gap-2.5"
               >
-                <span className="text-accent mt-1.5 flex-shrink-0">•</span>
+                <HiCheckCircle className="text-primary mt-0.5 flex-shrink-0 w-[18px] h-[18px]" />
                 <span className="leading-relaxed">{achievement}</span>
               </li>
             ))}
