@@ -1,4 +1,8 @@
-import type { EducationItemI, ProjectItemI, WorkExperienceItemI } from "./types";
+import type {
+  EducationItemI,
+  ProjectItemI,
+  WorkExperienceItemI,
+} from "./types";
 
 export const educationData: EducationItemI[] = [
   {
@@ -9,6 +13,7 @@ export const educationData: EducationItemI[] = [
     period: "2021 — 2025",
     description:
       "Focused on Object-Oriented Programming, Data Structures, and Human–Computer Interaction, with interests in Machine Learning applications.",
+    achievements: ["Graduated with Latin honors, Cum Laude"],
   },
   {
     degree: "Technical-Vocational Livelihood",
@@ -18,6 +23,7 @@ export const educationData: EducationItemI[] = [
     period: "2019 — 2021",
     description:
       "Studied Java development, networking fundamentals, and web technologies with an emphasis on software design and user experience.",
+    achievements: ["Graduated with High Honors"],
   },
   {
     degree: "High School Diploma",
@@ -38,7 +44,7 @@ export const workExperienceData: WorkExperienceItemI[] = [
   {
     role: "Information Technology Intern",
     company:
-      "Archipelago Philippine Seafarers’ Training Institute, Inc. (APSTII)",
+      "Archipelago Philippine Seafarers’ Training Institute, Inc. (APSTII)", 
     logo: "/images/apstii-logo.avif",
     location: "Las Piñas City, Philippines",
     period: "April 2025 - June 2025",
@@ -58,17 +64,72 @@ export const workExperienceData: WorkExperienceItemI[] = [
 
 export const projectsData: ProjectItemI[] = [
   {
+    id: "city-of-bacoor-chatbot",
     title: "City of Bacoor Chatbot",
-    description: "This project was built to help the City of Bacoor, Cavite, engage with its citizens more effectively. The system features an NLP.js-powered chatbot for public queries and a comprehensive, secure admin panel for city employees.",
+    about:
+      "This project was developed as our thesis capstone, where I took on the role of both frontend and backend developer. It was created to enhance citizen engagement by providing an interactive platform for accessing city information and services through an intelligent chatbot system.\nThe project was developed in collaboration with my classmate moonbamijam, who was also part of our thesis group. Together, we aimed to design a system that makes local government services more accessible, efficient, and user-friendly through conversational interaction.",
+    description:
+      "The Interactive Chatbot for the City of Bacoor, Cavite is a smart, conversational system designed to assist citizens in accessing city information and services more efficiently. Built to serve as a digital front desk for the local government, it provides instant responses to common inquiries about city officials, services, requirements, navigation, and announcements.",
+    features: [
+      "NLP-powered chatbot for instant responses",
+      "Secure admin panel for content management",
+      "Offers navigation guidance within city hall facilities",
+      "Delivers links to forms, documents, and social media pages",
+    ],
     image: "/images/chatbot-mockup-cover.avif",
-    link: "rawr",
-    techStack: ["React", "TailwindCSS", "Express.js", "NLP.js", "MongoDB"]
+    githubLink: "https://github.com/Jireh-sama/chatbot-api",
+    liveLink: "https://www.bacoorchatbot.com",
+    techStack: ["React", "TailwindCSS", "Express.js", "NLP.js", "MongoDB"],
+    problemsAndSolutions: [
+      {
+        title: "Natural Language Understanding",
+        problem:
+          "Processing diverse user queries with varying phrasing and local dialect required a sophisticated NLP implementation.",
+        solution:
+          "Implemented NLP.js with custom intent training and entity recognition, supporting multiple query variations and local terminologies.",
+      },
+      {
+        title: "Scalability & Performance",
+        problem:
+          "The system needed to handle high concurrent user loads during peak hours without degrading response times.",
+        solution:
+          "Utilized Redis for caching frequent queries and implemented connection pooling in Express.js to optimize database interactions.",
+      },
+    ],
   },
   {
+    id: "enroll-ease",
     title: "Enroll Ease",
-    description: "The goal of this project was to create a single, reliable source of truth for student enrollment. The system is a Django-based web application that serves two key user groups.",
+    about:
+      "EnrollEase was developed to streamline and modernize the student enrollment process for educational institutions. The goal was to create a user-friendly platform that simplifies enrollment management for both students and administrators — reducing manual work, improving communication, and ensuring a smoother overall experience. This project was built as part of a freelance commission for a student client who required a fully functional enrollment management web application. It reflects a practical and scalable solution developed using Django, designed to handle real-world enrollment workflows efficiently.",
+    description:
+      "EnrollEase is a Django-based student enrollment management system designed to simplify and automate the enrollment process for educational institutions. It provides dedicated interfaces for students and administrators, enabling efficient handling of applications, announcements, and notifications — all in one streamlined platform.",
+    features: [
+      "Secure user registration and email-based authentication",
+      "Personalized dashboards for students and administrators",
+      "Simple enrollment request and approval workflow",
+      "Profile management for updating personal information",
+      "Course catalog with available academic programs",
+      "Admin controls for managing applications and tracking statistics",
+    ],
     image: "/images/enrollease-mockup-cover.avif",
-    link: "rawr",
-    techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap"]
-  }
-]
+    githubLink: "https://github.com/Jireh-sama/enrollease",
+    techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap", "SQLite"],
+    problemsAndSolutions: [
+      {
+        title: "Data Integrity and Validation",
+        problem:
+          "Ensuring that all student data was accurate, complete, and valid upon submission was critical to prevent administrative errors.",
+        solution:
+          "Leveraged Django's ORM with built-in model validation and created custom forms with server-side checks to enforce strict data rules.",
+      },
+      {
+        title: "User Experience for Admins",
+        problem:
+          "The administrative backend needed to be intuitive for non-technical staff to manage thousands of student records and course schedules.",
+        solution:
+          "Customized the Django Admin interface to provide a clean, organized, and searchable dashboard with bulk-action capabilities for efficient management.",
+      },
+    ],
+  },
+];

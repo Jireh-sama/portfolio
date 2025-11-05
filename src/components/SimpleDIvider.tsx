@@ -1,8 +1,8 @@
 interface SimpleDIviderProps {
-  label: string;
+  title: string;
 }
 
-const SimpleDivider = ({ label }: SimpleDIviderProps) => {
+const SimpleDivider = ({ title }: SimpleDIviderProps) => {
   return (
     <div className="w-full mx-auto px-4">
       <div className="relative flex items-center justify-center">
@@ -24,7 +24,7 @@ const SimpleDivider = ({ label }: SimpleDIviderProps) => {
           <div className="flex items-center gap-2">
             <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground font-medium">
-              {label.toUpperCase()}
+              {title.toUpperCase()}
             </span>
             <div className="w-1 h-1 rounded-full bg-primary animate-pulse" />
           </div>

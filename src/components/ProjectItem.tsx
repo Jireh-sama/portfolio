@@ -1,5 +1,6 @@
 import type { ProjectItemI } from "@/lib/types";
 import { Badge } from "./ui/badge";
+import { NavLink } from "react-router";
 
 interface ProjectItemProps {
   project: ProjectItemI;
@@ -7,16 +8,15 @@ interface ProjectItemProps {
 
 const ProjectItem = ({ project }: ProjectItemProps) => {
   return (
-    <div
-      className="relative overflow-hidden rounded-2xl bg-card cursor-pointer border border-border/50"
-    >
-
-      <div className="relative aspect-video overflow-hidden bg-muted">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="h-full w-full object-cover"
-        />
+    <div className="relative overflow-hidden rounded-2xl bg-card border border-border/50 shadow-xs">
+      <div className="relative aspect-video overflow-hidden bg-muted cursor-pointer group">
+        <NavLink to={`/projects/${project.id}`}>
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </NavLink>
       </div>
 
       <div className="relative p-6">
@@ -49,6 +49,6 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
       </div>
     </div>
   );
-}
+};
 
-export default ProjectItem
+export default ProjectItem;

@@ -22,12 +22,23 @@ export interface WorkExperienceItemI {
 
 }
 
+export interface ProblemSolutionI {
+  title: string;
+  problem: string;
+  solution: string;
+}
+
 export interface ProjectItemI {
+  id: string
   title: string
+  about: string
   description: string
+  features: string[]
   image: string
-  link: string
+  githubLink: string
+  liveLink?: string
   techStack: string[]
+  problemsAndSolutions?: ProblemSolutionI[]
 }
 
 type NavNames = 'Home' | 'Experience' | 'Education' | 'Tech Stack' | 'Projects'

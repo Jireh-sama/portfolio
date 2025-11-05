@@ -7,7 +7,7 @@ interface WorkExperienceItemProps {
 const WorkExperienceItem = ({ exp }: WorkExperienceItemProps) => {
   return (
     <div className="group rounded-2xl flex dark:bg-gray-800/30 backdrop-blur-sm border p-6 space-x-5 transition-all duration-300 cursor-pointer">
-      <div className="flex-shrink-0 w-20 h-20 p-2 rounded-xl bg-white/5 border dark:border-white/10 flex items-center justify-center">
+      <div className="hidden md:flex flex-shrink-0 w-20 h-20 p-2 rounded-xl bg-white/5 border dark:border-white/10 items-center justify-center">
         <img
           src={exp.logo}
           alt={exp.company}
@@ -70,7 +70,7 @@ const WorkExperienceItem = ({ exp }: WorkExperienceItemProps) => {
             {exp.technologies.map((tech, techIndex) => (
               <span
                 key={techIndex}
-                className="px-3 py-1.5 rounded-lg dark:bg-gray-800/50 border border-gray-700/50 text-xs text-gray-400 dark:hover:bg-gray-800 hover:border-gray-600 transition-all cursor-pointer"
+                className="px-3 py-1.5 rounded-lg bg-accent-cyan/10 dark:bg-accent-cyan/15 border border-accent-cyan/30 dark:border-accent-cyan/40 text-xs text-accent-cyan dark:text-accent-cyan/95 font-medium dark:hover:bg-accent-cyan/25 hover:bg-accent-cyan/20 hover:border-accent-cyan/50 transition-all cursor-pointer duration-300"
               >
                 {tech}
               </span>
