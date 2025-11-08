@@ -4,13 +4,14 @@ import ScreenSizeIndicator from "./ScreenSizeIndicaator";
 import { Outlet } from "react-router";
 import { socialContacts } from "@/lib/constants";
 import FooterSection from "./section/FooterSection";
+import BlobBackground from "./BlobkBackground";
 
 const Layout = () => {
   const { techStackRef, projectRef, experienceRef, educationRef } = useRefs();
 
   return (
     <main className="min-h-[100vh]">
-      {/* <BackgroundRippleEffect /> */}
+      <BlobBackground />
       <ScreenSizeIndicator />
       <FloatingNav
         techStackRef={techStackRef}
