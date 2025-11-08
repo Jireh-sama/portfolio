@@ -46,6 +46,7 @@ export interface NavItemI {
   name: NavNames
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   fn: () => void
+  id: string
 }
 
 export interface TechStackItemI {
