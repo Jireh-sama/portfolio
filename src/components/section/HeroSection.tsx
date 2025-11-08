@@ -73,7 +73,7 @@ const HeroSection = () => {
   )
 
   return (
-    <section ref={sectionRef} className="h-[100vh] flex items-center">
+    <section id="hero" ref={sectionRef} className="h-[100vh] flex items-center">
       <div className="space-y-10">
         <div ref={badgeRef}>
           <CustomBadge
