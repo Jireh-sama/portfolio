@@ -67,7 +67,7 @@ export const projectsData: ProjectItemI[] = [
     id: "city-of-bacoor-chatbot",
     title: "City of Bacoor Chatbot",
     about:
-      "This project was developed as our thesis capstone, where I took on the role of both frontend and backend developer. It was created to enhance citizen engagement by providing an interactive platform for accessing city information and services through an intelligent chatbot system.\nThe project was developed in collaboration with my classmate moonbamijam, who was also part of our thesis group. Together, we aimed to design a system that makes local government services more accessible, efficient, and user-friendly through conversational interaction.",
+      "This project was developed as our thesis capstone, where I served as both the frontend and backend developer. The system was designed to enhance citizen engagement by providing an interactive platform for accessing city information and services through an intelligent chatbot. My classmate, moonbamijam, collaborated with me on this project as a fellow thesis group member. Together, we aimed to create a system that improves the accessibility, efficiency, and user-friendliness of local government services through conversational interaction.",
     description:
       "The Interactive Chatbot for the City of Bacoor, Cavite is a smart, conversational system designed to assist citizens in accessing city information and services more efficiently. Built to serve as a digital front desk for the local government, it provides instant responses to common inquiries about city officials, services, requirements, navigation, and announcements.",
     features: [
