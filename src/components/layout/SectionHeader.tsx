@@ -6,7 +6,7 @@ const SectionHeader = ({
   centered,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   centered?: boolean;
 }) => {
   return (
@@ -14,7 +14,9 @@ const SectionHeader = ({
       <h2 className="text-4xl font-bold text-foreground mb-3 text-balance">
         {title}
       </h2>
-      <p className="text-lg text-muted-foreground text-pretty">{subtitle}</p>
+      {subtitle && (
+        <p className="text-lg text-muted-foreground text-pretty">{subtitle}</p>
+      )}
     </div>
   );
 };
