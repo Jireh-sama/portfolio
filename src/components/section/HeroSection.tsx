@@ -1,6 +1,6 @@
 import CustomBadge from "../CustomBadge";
 import { AuroraText } from "../ui/aurora-text";
-import CTAButtons from "../CTAButtons";
+import CTAButtons from "../controls/CTAButtons";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

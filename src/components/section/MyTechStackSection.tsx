@@ -1,5 +1,5 @@
 import type { TechStackItemI } from "@/lib/types";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../layout/SectionHeader";
 import { Marquee } from "../ui/marquee";
 import { forwardRef, useRef } from "react";
 import { useGSAP } from "@gsap/react";

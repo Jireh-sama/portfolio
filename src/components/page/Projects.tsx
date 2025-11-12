@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { projectsData } from "@/lib/constants";
-import ProjectItem from "../ProjectItem";
-import SectionHeader from "../SectionHeader";
-import BackButton from "../BackButton";
+import ProjectItem from "../items/ProjectItem";
+import SectionHeader from "../layout/SectionHeader";
+import BackButton from "../controls/BackButton";
 
 const Projects = () => {
   useEffect(() => {

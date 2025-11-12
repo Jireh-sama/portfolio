@@ -1,10 +1,10 @@
 import { useRefs } from "@/context/useRefs";
-import FloatingNav from "./FloatingNav";
-import ScreenSizeIndicator from "./ScreenSizeIndicaator";
+import FloatingNav from "../controls/FloatingNav";
+import ScreenSizeIndicator from "../ScreenSizeIndicaator";
 import { Outlet } from "react-router";
 import { socialContacts } from "@/lib/constants";
-import FooterSection from "./section/FooterSection";
-import BlobBackground from "./BlobkBackground";
+import FooterSection from "../section/FooterSection";
+import BlobBackground from "../BlobkBackground";
 
 const Layout = () => {
   const { techStackRef, projectRef, experienceRef, educationRef } = useRefs();

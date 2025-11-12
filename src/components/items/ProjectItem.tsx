@@ -1,5 +1,5 @@
 import type { ProjectItemI } from "@/lib/types";
-import { Badge } from "./ui/badge";
+import { Badge } from "../ui/badge";
 import { NavLink } from "react-router";
 
 interface ProjectItemProps {

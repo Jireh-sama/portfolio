@@ -1,7 +1,7 @@
 import type { ProjectItemI } from "@/lib/types";
-import ProjectItem from "../ProjectItem";
+import ProjectItem from "../items/ProjectItem";
 import { forwardRef, useRef } from "react";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../layout/SectionHeader";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

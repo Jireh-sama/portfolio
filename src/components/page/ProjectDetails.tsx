@@ -5,7 +5,7 @@ import { LuGithub, LuExternalLink } from "react-icons/lu";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import ItemNotFound from "../feedback/ItemNotFound";
-import BackButton from "../BackButton";
+import BackButton from "../controls/BackButton";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();

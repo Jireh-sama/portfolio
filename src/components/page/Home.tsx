@@ -9,7 +9,7 @@ import {
 import MyTechStackSection from "../section/MyTechStackSection";
 import { techStackData } from "../TechStackData";
 import ProjectSection from "../section/ProjectSection";
-import SimpleDivider from "../SimpleDIvider";
+import SimpleDivider from "../layout/SimpleDIvider";
 import { useRefs } from "@/context/useRefs";
 
 const Home = () => {

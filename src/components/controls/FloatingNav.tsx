@@ -1,4 +1,4 @@
-import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 import { useEffect, useState } from "react";
 import type { NavItemI } from "@/lib/types";
 import { cn } from "@/lib/utils";

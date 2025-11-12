@@ -1,6 +1,6 @@
-import EducationItem from "../EducationItem";
+import EducationItem from "../items/EducationItem";
 import type { EducationItemI } from "@/lib/types";
-import SectionHeader from "../SectionHeader";
+import SectionHeader from "../layout/SectionHeader";
 import { forwardRef, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
