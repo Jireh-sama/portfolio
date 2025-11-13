@@ -9,7 +9,7 @@ This project showcases my skills, experience, and selected projects as a web dev
 
 🔗 **Live Site:** [jirehtumbagahan.vercel.app](https://jirehtumbagahan.vercel.app/)  
 📸 **Preview:**  
-![Portfolio Screenshot](/src/assets/screenshot.png)
+![Portfolio Screenshot](/public/images/screenshot.png)
 
 ---
 
