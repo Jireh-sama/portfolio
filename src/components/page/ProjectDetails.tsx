@@ -1,4 +1,4 @@
-import { projectsData } from "@/lib/constants";
+import { projectsData } from "../PortfolioData";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { LuGithub, LuExternalLink } from "react-icons/lu";

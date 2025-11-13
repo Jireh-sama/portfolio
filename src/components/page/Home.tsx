@@ -11,7 +11,7 @@ import { techStackData } from "../TechStackData";
 import ProjectSection from "../section/ProjectSection";
 import SimpleDivider from "../layout/SimpleDIvider";
 import { useRefs } from "@/context/useRefs";
-
+import { educationData, projectsData, techStackData, workExperienceData, myPrinciplesData } from "../PortfolioData";
 const Home = () => {
   const { techStackRef, projectRef, experienceRef, educationRef } = useRefs();
 
