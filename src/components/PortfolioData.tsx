@@ -2,7 +2,7 @@ import type {
   EducationItemI,
   PrincipleI,
   ProjectItemI,
-  TechStackItemI,
+  TechItemI,
   WorkExperienceItemI,
 } from "@/lib/types";
 import {
@@ -29,7 +29,7 @@ import apstiiLogo from "@/assets/images/apstii-logo.avif";
 import freeLanceLogo from "@/assets/images/free-lance-logo.avif";
 import { LuBoxes, LuCode, LuRocket, LuUsers } from "react-icons/lu";
 import V0Icon from "./icon/V0Icon";
-export const techStackData: TechStackItemI[] = [
+export const techStackData: TechItemI[] = [
   {
     logo: (
       <SiNextdotjs className="size-14 lg:size-20 transition-colors hover:text-foreground" />
@@ -78,7 +78,7 @@ export const techStackData: TechStackItemI[] = [
   },
 ];
 
-export const devToolsData: TechStackItemI[] = [
+export const devToolsData: TechItemI[] = [
   {
     name: "Figma",
     logo: (

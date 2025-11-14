@@ -49,7 +49,7 @@ export interface NavItemI {
   id: string
 }
 
-export interface TechStackItemI {
+export interface TechItemI {
   logo: React.ReactNode
   name: string
 }
