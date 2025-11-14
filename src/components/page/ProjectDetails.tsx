@@ -68,7 +68,7 @@ const ProjectDetails = () => {
               <h3 className="text-xl font-semibold mb-4">Technologies</h3>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
-                  <Badge key={tech} variant="secondary">
+                  <Badge key={tech} variant="secondary" className="hover:border-neutral-200 cursor-pointer transition-transform">
                     {tech}
                   </Badge>
                 ))}
