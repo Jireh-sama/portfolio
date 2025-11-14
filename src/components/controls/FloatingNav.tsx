@@ -8,15 +8,18 @@ import {
   LuGraduationCap,
   LuHouse,
   LuLayers,
+  LuUser,
 } from "react-icons/lu";
 
 interface FloatingNavProps {
+  aboutMeRef: React.RefObject<HTMLDivElement | null>;
   techStackRef: React.RefObject<HTMLDivElement | null>;
   projectRef: React.RefObject<HTMLDivElement | null>;
   experienceRef: React.RefObject<HTMLDivElement | null>;
   educationRef: React.RefObject<HTMLDivElement | null>;
 }
 const FloatingNav = ({
+  aboutMeRef,
   techStackRef,
   projectRef,
   experienceRef,
@@ -42,6 +45,12 @@ const FloatingNav = ({
 
   const navItems: NavItemI[] = [
     { name: "Home", icon: LuHouse, fn: handleScrollToTop, id: "hero" },
+    {
+      name: "About Me",
+      icon: LuUser,
+      fn: () => handleScrollToSection(aboutMeRef),
+      id: "about-me",
+    },
     {
       name: "Tech Stack",
       icon: LuLayers,
@@ -83,7 +92,7 @@ const FloatingNav = ({
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.5 }
     );
     navItems.forEach(({ id }) => {
       const el = document.getElementById(id);

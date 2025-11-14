@@ -1,6 +1,7 @@
 import { createContext, useRef, useContext, type ReactNode } from "react";
 
 type RefsContextType = {
+  aboutMeRef: React.RefObject<HTMLDivElement | null>;
   techStackRef: React.RefObject<HTMLDivElement | null>;
   projectRef: React.RefObject<HTMLDivElement | null>;
   experienceRef: React.RefObject<HTMLDivElement | null>;
@@ -11,6 +12,7 @@ type RefsContextType = {
 const RefsContext = createContext<RefsContextType | null>(null);
 
 export function RefsProvider({ children }: { children: ReactNode }) {
+  const aboutMeRef = useRef<HTMLDivElement>(null);
   const techStackRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
@@ -18,7 +20,7 @@ export function RefsProvider({ children }: { children: ReactNode }) {
 
   return (
     <RefsContext.Provider
-      value={{ techStackRef, projectRef, experienceRef, educationRef }}
+      value={{ aboutMeRef, techStackRef, projectRef, experienceRef, educationRef }}
     >
       {children}
     </RefsContext.Provider>

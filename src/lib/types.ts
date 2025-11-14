@@ -41,7 +41,7 @@ export interface ProjectItemI {
   problemsAndSolutions?: ProblemSolutionI[]
 }
 
-type NavNames = 'Home' | 'Experience' | 'Education' | 'Tech Stack' | 'Projects'
+type NavNames = 'Home' | 'Experience' | 'Education' | 'Tech Stack' | 'Projects' | 'About Me'
 export interface NavItemI {
   name: NavNames
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
@@ -52,4 +52,10 @@ export interface NavItemI {
 export interface TechStackItemI {
   logo: React.ReactNode
   name: string
+}
+
+export interface PrincipleI {
+  icon: React.ReactNode
+  title: string
+  description: string
 }

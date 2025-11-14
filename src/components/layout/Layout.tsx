@@ -7,13 +7,14 @@ import FooterSection from "../section/FooterSection";
 import BlobBackground from "../BlobkBackground";
 
 const Layout = () => {
-  const { techStackRef, projectRef, experienceRef, educationRef } = useRefs();
+  const { aboutMeRef, techStackRef, projectRef, experienceRef, educationRef } = useRefs();
 
   return (
     <main className="min-h-[100vh]">
       <BlobBackground />
       <ScreenSizeIndicator />
       <FloatingNav
+        aboutMeRef={aboutMeRef}
         techStackRef={techStackRef}
         projectRef={projectRef}
         experienceRef={experienceRef}

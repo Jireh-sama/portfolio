@@ -1,25 +1,21 @@
 import EducationSection from "../section/EducationSection";
 import HeroSection from "../section/HeroSection";
 import WorkExperienceSection from "../section/WorkExperienceSection";
-import {
-  educationData,
-  projectsData,
-  workExperienceData,
-} from "../../lib/constants";
 import MyTechStackSection from "../section/MyTechStackSection";
-import { techStackData } from "../TechStackData";
 import ProjectSection from "../section/ProjectSection";
 import SimpleDivider from "../layout/SimpleDIvider";
 import { useRefs } from "@/context/useRefs";
-import { educationData, projectsData, techStackData, workExperienceData, myPrinciplesData } from "../PortfolioData";
+import AboutMeSection from "../section/AboutMeSection";
+import { educationData, projectsData, techStackData, workExperienceData, myPrinciplesData, devToolsData } from "../PortfolioData";
 const Home = () => {
-  const { techStackRef, projectRef, experienceRef, educationRef } = useRefs();
+  const { aboutMeRef, techStackRef, projectRef, experienceRef, educationRef } = useRefs();
 
   return (
     <>
       <HeroSection />
+      <AboutMeSection principleList={myPrinciplesData} ref={aboutMeRef}/>
       <SimpleDivider title="TECH STACK" />
-      <MyTechStackSection techStackList={techStackData} ref={techStackRef} />
+      <MyTechStackSection techStackList={techStackData} devToolsList={devToolsData} ref={techStackRef} />
       <SimpleDivider title="PROJECTS" />
       <ProjectSection ref={projectRef} projectList={projectsData} />
       <SimpleDivider title="WORK EXPERIENCE" />
