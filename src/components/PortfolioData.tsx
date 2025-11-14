@@ -6,9 +6,16 @@ import type {
   WorkExperienceItemI,
 } from "@/lib/types";
 import {
+  SiAffinity,
+  SiBiome,
+  SiExcalidraw,
+  SiGithub,
+  SiGooglegemini,
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
+  SiOpenai,
+  SiPostman,
   SiPrisma,
   SiReact,
   SiTailwindcss,
@@ -21,6 +28,7 @@ import enrollEaseMockup from "@/assets/images/enrollease-mockup-cover.avif";
 import apstiiLogo from "@/assets/images/apstii-logo.avif";
 import freeLanceLogo from "@/assets/images/free-lance-logo.avif";
 import { LuBoxes, LuCode, LuRocket, LuUsers } from "react-icons/lu";
+import V0Icon from "./icon/V0Icon";
 export const techStackData: TechStackItemI[] = [
   {
     logo: (
@@ -68,11 +76,65 @@ export const techStackData: TechStackItemI[] = [
     logo: <Firebase />,
     name: "Firebase",
   },
+];
+
+export const devToolsData: TechStackItemI[] = [
   {
-    logo: <FigmaIcon />,
     name: "Figma",
+    logo: (
+      <FigmaIcon />
+    ),
+  },
+  {
+    name: "Postman",
+    logo: (
+      <SiPostman className="size-14 lg:size-20 transition-colors hover:text-[#FF6C37]" />
+    ),
+  },
+  {
+    name: "ChatGPT",
+    logo: (
+      <SiOpenai className="size-14 lg:size-20 transition-colors hover:text-[#10A37F]" />
+    ),
+  },
+  {
+    name: "Gemini",
+    logo: (
+      <SiGooglegemini className="size-14 lg:size-20 transition-colors hover:text-[#4285F4]" />
+    ),
+  },
+  {
+    name: "Affinity",
+    logo: (
+      <SiAffinity className="size-14 lg:size-20 transition-colors hover:text-[#7E4DD2]" />
+    ),
+  },
+  {
+    name: "Excalidraw",
+    logo: (
+      <SiExcalidraw className="size-14 lg:size-20 transition-colors hover:text-[#5A5AF7]" />
+    ),
+  },
+  {
+    name: "Biome",
+    logo: (
+      <SiBiome className="size-14 lg:size-20 transition-colors hover:text-[#1B67FF]" />
+    ),
+  },
+  {
+    name: "Github",
+    logo: (
+      <SiGithub className="size-14 lg:size-20 transition-colors hover:text-[#181717]" />
+    ),
+  },
+  {
+    name: "V0",
+    logo: (
+      <V0Icon />
+    ),
   },
 ];
+
 
 export const projectsData: ProjectItemI[] = [
   {
@@ -99,6 +161,7 @@ export const projectsData: ProjectItemI[] = [
       "Express.js",
       "NLP.js",
       "JWT",
+      "Firebase",
       "MongoDB",
       "NoSQL",
     ],
@@ -165,16 +228,16 @@ export const workExperienceData: WorkExperienceItemI[] = [
     period: "2024 - 2025",
     duration: "2 years",
     current: false,
-   description:
-    "Developed and maintained a variety of web applications, including full-stack projects using Next.js, React frontends, and Django backends, delivering secure, scalable, and performant solutions tailored to client needs.",
-  achievements: [
-    "Built full-stack applications using Next.js with TypeScript, integrating frontend and backend seamlessly",
-    "Developed dynamic frontend applications using React",
-    "Created backend services and APIs with Django",
-    "Integrated Clerk for authentication and user management",
-    "Designed and managed databases using PostgreSQL and Prisma ORM",
-    "Collaborated with clients to gather requirements and deliver tailored solutions",
-  ],
+    description:
+      "Developed and maintained a variety of web applications, including full-stack projects using Next.js, React frontends, and Django backends, delivering secure, scalable, and performant solutions tailored to client needs.",
+    achievements: [
+      "Built full-stack applications using Next.js with TypeScript, integrating frontend and backend seamlessly",
+      "Developed dynamic frontend applications using React",
+      "Created backend services and APIs with Django",
+      "Integrated Clerk for authentication and user management",
+      "Designed and managed databases using PostgreSQL and Prisma ORM",
+      "Collaborated with clients to gather requirements and deliver tailored solutions",
+    ],
     technologies: [
       "Next.js",
       "React.js",
