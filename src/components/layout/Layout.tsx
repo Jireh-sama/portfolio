@@ -20,7 +20,7 @@ const Layout = () => {
         experienceRef={experienceRef}
         educationRef={educationRef}
       />
-      <div className="max-w-6xl mx-auto px-6 space-y-14 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 space-y-36 relative z-10">
         <Outlet />
       </div>
       <FooterSection

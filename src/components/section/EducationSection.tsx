@@ -24,7 +24,7 @@ const EducationSection = forwardRef<HTMLDivElement, EducationSectionProps>(
       gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 50%",
           once: true, // Animation only runs once
         },
       })

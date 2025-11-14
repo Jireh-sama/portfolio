@@ -24,7 +24,7 @@ const ProjectSection = forwardRef<HTMLDivElement, ProjectSectionProps>(
       gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
+          start: "top 50%",
           once: true,
         },
       })
@@ -50,7 +50,7 @@ const ProjectSection = forwardRef<HTMLDivElement, ProjectSectionProps>(
     return (
       <section id="project" ref={ref} className="scroll-mt-20">
         <div ref={containerRef}>
-          <article ref={headerRef} className="flex items-center justify-between">
+          <article ref={headerRef}>
             <SectionHeader
               title="My Projects"
               subtitle="Collection of projects that I've built throughout my web development journey"

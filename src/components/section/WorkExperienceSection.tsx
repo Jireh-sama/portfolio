@@ -26,7 +26,7 @@ const WorkExperienceSection = forwardRef<
     gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%",
+        start: "top 50%",
         once: true,
       },
     })
