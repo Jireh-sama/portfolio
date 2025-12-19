@@ -76,10 +76,10 @@ const HeroSection = () => {
     <section id="hero" ref={sectionRef} className="h-[100vh] flex items-center">
       <div className="space-y-10">
         <div ref={badgeRef}>
-          <CustomBadge
+          {/* <CustomBadge
             icon={<div className="size-3 rounded-full bg-emerald-500 animate-pulse" />}
             text="Looking for job opportunities"
-          />
+          /> */}
           
         </div>
         <h1 ref={headingRef} className="font-outfit text-4xl lg:text-7xl font-medium">
