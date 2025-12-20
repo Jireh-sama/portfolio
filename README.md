@@ -1,7 +1,7 @@
 # 🌟 Jireh Alny T. Tumbagahan – Developer Portfolio
 
 Welcome to my personal portfolio website!  
-This project showcases my skills, experience, and selected projects as a web developer.
+This project showcases my skills, experience, and selected projects as a fullstack web developer.
 
 ---
 
