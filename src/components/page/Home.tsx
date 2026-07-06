@@ -9,7 +9,7 @@ import AboutMeSection from "../section/AboutMeSection";
 import { educationData, projectsData, techStackData, workExperienceData, myPrinciplesData, devToolsData } from "../PortfolioData";
 const Home = () => {
   const { aboutMeRef, techStackRef, projectRef, experienceRef, educationRef } = useRefs();
-
+  
   return (
     <>
       <HeroSection />
