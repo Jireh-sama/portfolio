@@ -1,5 +1,5 @@
 import type { WorkExperienceItemI } from "@/lib/types";
-import { LuArrowUpRight, LuCalendar, LuMapPin } from "react-icons/lu";
+import { LuArrowUpRight, LuCalendar, LuExternalLink, LuMapPin } from "react-icons/lu";
 
 interface WorkExperienceItemProps {
   exp: WorkExperienceItemI;
@@ -57,7 +57,23 @@ const WorkExperienceItem = ({ exp }: WorkExperienceItemProps) => {
             </div>
 
             <p className="text-lg text-muted-foreground font-medium mb-3">
-              {exp.company}
+              {exp.companyUrl ? (
+                <a
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex items-center gap-1.5 rounded-sm underline-offset-4
+                    transition-colors hover:text-foreground hover:underline
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
+                  "
+                >
+                  {exp.company}
+                  <LuExternalLink className="w-4 h-4 flex-shrink-0" />
+                </a>
+              ) : (
+                exp.company
+              )}
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
