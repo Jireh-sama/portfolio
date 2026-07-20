@@ -5,10 +5,10 @@ import { LuArrowLeft } from "react-icons/lu";
 interface ItemNotFoundProps {
   title: string
   description: string
-  redictLink?: string
+  redirectLink?: string
 }
 
-const ItemNotFound = ({ title, description, redictLink = "/" }: ItemNotFoundProps) => {
+const ItemNotFound = ({ title, description, redirectLink = "/" }: ItemNotFoundProps) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
       <h1 className="text-4xl font-bold mb-4">{title}</h1>
@@ -16,7 +16,7 @@ const ItemNotFound = ({ title, description, redictLink = "/" }: ItemNotFoundProp
         {description}
       </p>
       <Button asChild>
-        <NavLink to={redictLink}>
+        <NavLink to={redirectLink}>
           <LuArrowLeft />
           Back to Home
         </NavLink>
