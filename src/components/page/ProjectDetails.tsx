@@ -9,7 +9,6 @@ import BackButton from "../controls/BackButton";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
-  console.log(projectId);
   const project = projectsData.find((p) => p.id === projectId);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ const ProjectDetails = () => {
       <ItemNotFound
         title="Project Not Found"
         description="Sorry, we couldn't find the project you're looking for."
-        redictLink="/projects"
+        redirectLink="/projects"
       />
     );
   }
@@ -50,7 +49,7 @@ const ProjectDetails = () => {
               <h2 className="text-2xl font-semibold mb-4">
                 About this project
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
                 {project.description}
               </p>
             </div>

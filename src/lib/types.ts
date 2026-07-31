@@ -11,6 +11,8 @@ export interface EducationItemI {
 export interface WorkExperienceItemI {
   role: string
   company: string
+  /** Optional company website. When set, the company name renders as a link. */
+  companyUrl?: string
   logo: string
   location: string
   period: string

@@ -5,6 +5,7 @@ import BackButton from "../controls/BackButton";
 import { projectsData } from "../PortfolioData";
 
 const Projects = () => {
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -16,7 +17,7 @@ const Projects = () => {
         title="My Projects"
         subtitle="Collection of projects that I've built throughout my web development journey"
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-">
         {projectsData.map((project) => (
           <ProjectItem key={project.title} project={project} />
         ))}

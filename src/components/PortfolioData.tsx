@@ -27,6 +27,8 @@ import chatbotMockup from "@/assets/images/chatbot-mockup-cover.avif";
 import enrollEaseMockup from "@/assets/images/enrollease-mockup-cover.avif";
 import apstiiLogo from "@/assets/images/apstii-logo.avif";
 import freeLanceLogo from "@/assets/images/free-lance-logo.avif";
+import ifortLogo from "@/assets/images/ifort-logo.avif";
+import nerveTechnologiesLogo from "@/assets/images/nerve-technologies-logo.avif";
 import { LuBoxes, LuCode, LuRocket, LuUsers } from "react-icons/lu";
 import V0Icon from "./icon/V0Icon";
 export const techStackData: TechItemI[] = [
@@ -221,6 +223,53 @@ export const projectsData: ProjectItemI[] = [
 
 export const workExperienceData: WorkExperienceItemI[] = [
   {
+    role: "Junior Software Engineer",
+    company: "iFort",
+    logo: ifortLogo,
+    location: "Remote (Perth, Western Australia)",
+    period: "February 2026 - July 2026",
+    duration: "5 months",
+    current: false,
+    description:
+      "Developed features for a Next.js platform built on a microservices architecture, taking problems from initial discussion through to a shipped solution.",
+    achievements: [
+      "Collaborated directly with employees to understand their problems and independently developed the solution as a new feature on the platform, owning the full process from requirements to delivery",
+      "Implemented features from GitHub issue descriptions assigned by a senior engineer when direct client discussion was not required",
+      "Contributed to a Next.js application built on a microservices architecture",
+      "Integrated AI tools such as GitHub Copilot, Claude, and Antigravity into daily development, becoming comfortable building AI into the workflow",
+    ],
+    technologies: [
+      "Next.js",
+      "Microservices",
+      "GitHub",
+      "GitHub Copilot",
+      "Claude",
+      "Antigravity",
+    ],
+  },
+  {
+    role: "Full Stack Web Developer",
+    company: "Nerve Technologies",
+    companyUrl: "https://nerve-technologies.com/",
+    logo: nerveTechnologiesLogo,
+    location: "Remote",
+    period: "December 2025 - February 2026",
+    duration: "3 months",
+    current: false,
+    description:
+      "Built frontend features and backend services across the stack, working alongside designers and taking part in code reviews to ship reliable, pixel-accurate releases.",
+    achievements: [
+      "Built frontend features and backend services, including secure authentication and RESTful CRUD APIs, using AI pair-programming tools to speed up implementation and testing",
+      "Partnered with designers to deliver pixel-accurate UI and took part in code reviews that reduced post-release bugs",
+    ],
+    technologies: [
+      "REST APIs",
+      "Authentication",
+      "AI Pair Programming",
+      "Code Review",
+    ],
+  },
+  {
     role: "Freelance Web Developer",
     company: "Self-Employed",
     logo: freeLanceLogo,
@@ -255,6 +304,7 @@ export const workExperienceData: WorkExperienceItemI[] = [
     role: "Information Technology Intern",
     company:
       "Archipelago Philippine Seafarers’ Training Institute, Inc. (APSTII)",
+    companyUrl: "https://apstii.com/",
     logo: apstiiLogo,
     location: "Las Piñas City, Philippines",
     period: "April 2025 - June 2025",

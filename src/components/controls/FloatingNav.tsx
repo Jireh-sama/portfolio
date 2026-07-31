@@ -1,5 +1,5 @@
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { NavItemI } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import {
@@ -26,6 +26,46 @@ const FloatingNav = ({
   educationRef,
 }: FloatingNavProps) => {
   const [selectedTab, setSelectedTab] = useState<NavItemI["name"]>("Home");
+
+  // Nav parks itself after 2s of scroll inactivity, and comes back on scroll
+  // or when the pointer reaches the right edge.
+  const [navVisible, setNavVisible] = useState(true);
+  const hideTimerRef = useRef<number | null>(null);
+  const pointerInsideRef = useRef(false);
+
+  const scheduleHide = useCallback(() => {
+    if (hideTimerRef.current) window.clearTimeout(hideTimerRef.current);
+    hideTimerRef.current = window.setTimeout(() => {
+      // Never hide out from under the pointer.
+      if (!pointerInsideRef.current) setNavVisible(false);
+    }, 2000);
+  }, []);
+
+  const revealNav = useCallback(() => {
+    setNavVisible(true);
+    scheduleHide();
+  }, [scheduleHide]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", revealNav, { passive: true });
+    scheduleHide(); // start the idle countdown on mount
+
+    return () => {
+      window.removeEventListener("scroll", revealNav);
+      if (hideTimerRef.current) window.clearTimeout(hideTimerRef.current);
+    };
+  }, [revealNav, scheduleHide]);
+
+  const handlePointerEnter = () => {
+    pointerInsideRef.current = true;
+    if (hideTimerRef.current) window.clearTimeout(hideTimerRef.current);
+    setNavVisible(true);
+  };
+
+  const handlePointerLeave = () => {
+    pointerInsideRef.current = false;
+    scheduleHide();
+  };
 
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -102,8 +142,35 @@ const FloatingNav = ({
   }, []);
 
   return (
-    <nav className="hidden lg:block fixed right-8 top-1/2 -translate-y-1/2 z-50">
-      <div className="flex flex-col gap-2 bg-card/80 backdrop-blur-md rounded-full p-3 shadow-xl border">
+    <>
+      {/* Invisible hot zone on the right edge — re-reveals the parked nav */}
+      <div
+        aria-hidden="true"
+        onMouseEnter={handlePointerEnter}
+        onMouseLeave={handlePointerLeave}
+        className="hidden lg:block fixed right-0 top-1/2 -translate-y-1/2 h-72 w-8 z-40"
+      >
+        {/* Subtle grip hint, only while the nav is parked */}
+        <div
+          className={cn(
+            "absolute right-1 top-1/2 -translate-y-1/2 h-16 w-1 rounded-full bg-primary/30 transition-opacity duration-500",
+            navVisible ? "opacity-0" : "opacity-100"
+          )}
+        />
+      </div>
+
+      <nav
+        onMouseEnter={handlePointerEnter}
+        onMouseLeave={handlePointerLeave}
+        className={cn(
+          "hidden lg:block fixed right-8 top-1/2 -translate-y-1/2 z-50",
+          "transition-[opacity,translate] duration-500 ease-out",
+          navVisible
+            ? "translate-x-0 opacity-100"
+            : "translate-x-[calc(100%+3rem)] opacity-0 pointer-events-none"
+        )}
+      >
+        <div className="flex flex-col gap-2 bg-card/80 backdrop-blur-md rounded-full p-3 shadow-xl border">
         {navItems.map((item) => (
           <button
             onClick={() => handleClickItem(item.name, item.fn)}
@@ -131,9 +198,10 @@ const FloatingNav = ({
 
         <hr className="my-2 border-slate-200 dark:border-slate-700" />
 
-        <AnimatedThemeToggler className="group relative p-3 rounded-full transition-all duration-300 hover:bg-blue-500 border border-transparent bg-white/70 dark:bg-white/10" />
-      </div>
-    </nav>
+          <AnimatedThemeToggler className="group relative p-3 rounded-full transition-all duration-300 hover:bg-blue-500 border border-transparent bg-white/70 dark:bg-white/10" />
+        </div>
+      </nav>
+    </>
   );
 };
 
