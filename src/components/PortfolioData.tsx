@@ -157,8 +157,8 @@ export const projectsData: ProjectItemI[] = [
     liveLink: "https://www.bacoorchatbot.com",
     techStack: [
       "React.js",
-      "Typescript",
-      "Shadncn",
+      "TypeScript",
+      "shadcn/ui",
       "TailwindCSS",
       "Express.js",
       "NLP.js",
@@ -201,7 +201,7 @@ export const projectsData: ProjectItemI[] = [
     ],
     image: enrollEaseMockup,
     githubLink: "https://github.com/Jireh-sama/enrollease",
-    techStack: ["Django", "Python", "HMTL", "CSS", "Bootstrap", "SQLite"],
+    techStack: ["Django", "Python", "HTML", "CSS", "Bootstrap", "SQLite"],
     problemsAndSolutions: [
       {
         title: "Data Integrity and Validation",
