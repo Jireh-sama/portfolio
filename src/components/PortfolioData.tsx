@@ -1,7 +1,9 @@
 import type {
   EducationItemI,
+  NowI,
   PrincipleI,
   ProjectItemI,
+  ReleaseI,
   TechItemI,
   WorkExperienceItemI,
 } from "@/lib/types";
@@ -31,6 +33,147 @@ import ifortLogo from "@/assets/images/ifort-logo.avif";
 import nerveTechnologiesLogo from "@/assets/images/nerve-technologies-logo.avif";
 import { LuBoxes, LuCode, LuRocket, LuUsers } from "react-icons/lu";
 import V0Icon from "./icon/V0Icon";
+/** The journey, oldest first. Drives the hero git log, the commit graph and the stage panels. */
+export const journeyData: ReleaseI[] = [
+  {
+    id: "ama-tvl",
+    tag: "v0.1.0",
+    year: "2019",
+    kind: "init",
+    lane: "main",
+    title: "Tech-voc ICT at AMA",
+    logLine: "init: TVL ICT @ AMA",
+    meta: "AMA Computer College · Las Piñas · 2019 – 2021",
+    summary:
+      "Senior high school on the Information and Communication Technology track: Java, networking fundamentals and the basics of the web, with an emphasis on software design and user experience.",
+    added: [
+      "first Java programs",
+      "networking and web fundamentals",
+      "graduated with high honors",
+    ],
+    stack: ["java"],
+  },
+  {
+    id: "first-web",
+    tag: "v0.2.0",
+    year: "2022",
+    kind: "feat",
+    lane: "main",
+    title: "HTML, CSS & JavaScript, then React",
+    logLine: "feat: HTML, CSS & JS → React",
+    meta: "Self-taught · 2022 – 2023",
+    summary:
+      "It started as curiosity about how websites work. In 2023 React was the turning point: seeing components, state and logic come together into something interactive felt less like coding and more like creating.",
+    added: [
+      "HTML, CSS & JavaScript fundamentals",
+      "React: components, state, real interactivity",
+    ],
+    removed: ['"it\'s just curiosity"'],
+    stack: ["html", "css", "javascript", "react"],
+  },
+  {
+    id: "freelance",
+    tag: "v0.3.0",
+    year: "2024",
+    kind: "branch",
+    lane: "branch",
+    title: "Freelance web developer",
+    logLine: "branch: freelance, EnrollEase",
+    meta: "Self-employed · Remote · 2024 – 2025",
+    summary:
+      "Built and maintained web apps for clients: full-stack Next.js with TypeScript, React frontends and Django backends. One commission became EnrollEase, a student enrollment system.",
+    added: [
+      "full-stack Next.js + TypeScript apps",
+      "Clerk auth, PostgreSQL with Prisma ORM",
+      "requirements gathered directly with clients",
+    ],
+    stack: ["next", "typescript", "tailwindcss", "django", "prisma", "postgresql", "clerk"],
+    projectId: "enroll-ease",
+  },
+  {
+    id: "apstii",
+    tag: "v0.4.0",
+    year: "Apr 2025",
+    kind: "feat",
+    lane: "main",
+    title: "IT intern at APSTII",
+    logLine: "feat: IT intern @ APSTII",
+    meta: "Archipelago Philippine Seafarers' Training Institute · Apr – Jun 2025",
+    summary:
+      "Supported the IT department in a real office: trainee records, document tracking and first-line troubleshooting.",
+    added: [
+      "digital records for trainee registration and attendance",
+      "basic computer and network troubleshooting",
+      "IT documentation practices",
+    ],
+    link: { label: "apstii.com", href: "https://apstii.com/" },
+  },
+  {
+    id: "bacoor-chatbot",
+    tag: "v1.0.0",
+    year: "2025",
+    kind: "release",
+    lane: "main",
+    title: "City of Bacoor Chatbot",
+    logLine: "release: Bacoor chatbot, cum laude",
+    meta: "Thesis capstone · Cavite State University · 2025",
+    summary:
+      "Our thesis: an NLP chatbot that works as the city hall's digital front desk. I built both the frontend and the backend. It shipped alongside my degree: BS Information Technology, cum laude.",
+    added: [
+      "NLP.js intents trained on local phrasing",
+      "secure admin panel for content management",
+      "graduated BS IT, cum laude",
+    ],
+    stack: ["express", "mongodb", "nlp.js", "jwt", "firebase"],
+    projectId: "city-of-bacoor-chatbot",
+  },
+  {
+    id: "nerve",
+    tag: "v1.1.0",
+    year: "Dec 2025",
+    kind: "merge",
+    lane: "main",
+    title: "Full-stack developer at Nerve Technologies",
+    logLine: "merge: freelance → Nerve Technologies",
+    meta: "Remote · Dec 2025 – Feb 2026",
+    summary:
+      "Freelance experience merged into a team. Built frontend features and backend services, worked alongside designers and took part in code reviews.",
+    added: [
+      "secure authentication and RESTful CRUD APIs",
+      "pixel-accurate UI, built with designers",
+      "code reviews that reduced post-release bugs",
+    ],
+    link: { label: "nerve-technologies.com", href: "https://nerve-technologies.com/" },
+  },
+  {
+    id: "ifort",
+    tag: "v1.2.0",
+    year: "Feb 2026",
+    kind: "feat",
+    lane: "main",
+    title: "Junior software engineer at iFort",
+    logLine: "feat: junior SWE @ iFort",
+    meta: "Remote · Perth, Western Australia · Feb – Jul 2026",
+    summary:
+      "Built features for a Next.js platform on a microservices architecture, taking problems from the first conversation with the people who had them through to a shipped feature.",
+    added: [
+      "owned features end to end, from requirements to delivery",
+      "shipped GitHub issues assigned by a senior engineer",
+      "AI tools in the daily workflow",
+    ],
+    stack: ["copilot", "claude", "antigravity"],
+  },
+];
+
+export const nowData: NowI = {
+  headline: "Open to remote full-stack roles.",
+  facts: [
+    { label: "last commit", value: "Junior Software Engineer, iFort · Feb – Jul 2026" },
+    { label: "based in", value: "Las Piñas, Philippines · UTC+8 · remote" },
+    { label: "education", value: "BS IT, Cum Laude · Cavite State University" },
+  ],
+};
+
 export const techStackData: TechItemI[] = [
   {
     logo: (
