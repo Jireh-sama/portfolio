@@ -1,28 +1,34 @@
-import { useEffect } from "react";
 import ProjectItem from "../items/ProjectItem";
-import SectionHeader from "../layout/SectionHeader";
 import BackButton from "../controls/BackButton";
-import { projectsData } from "../PortfolioData";
+import { journeyData, projectsData } from "../PortfolioData";
 
 const Projects = () => {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <>
-      <BackButton />
-      <SectionHeader
-        title="My Projects"
-        subtitle="Collection of projects that I've built throughout my web development journey"
-      />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-">
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <BackButton to="/#journey" label="back to the journey" />
+
+      <header className="mt-12">
+        <p className="font-mono text-sm text-muted-foreground">
+          <span aria-hidden className="text-primary">$ </span>ls ~/projects
+        </p>
+        <h1 className="mt-3 text-5xl font-bold tracking-[-0.045em] sm:text-6xl">Projects</h1>
+        <p className="mt-4 max-w-xl leading-relaxed text-prose">
+          Things I've shipped along the way. Each one has release notes: what it is, what shipped,
+          and what had to be fixed.
+        </p>
+      </header>
+
+      <ul className="mt-12 grid gap-8 md:grid-cols-2">
         {projectsData.map((project) => (
-          <ProjectItem key={project.title} project={project} />
+          <li key={project.id}>
+            <ProjectItem
+              project={project}
+              release={journeyData.find((release) => release.projectId === project.id)}
+            />
+          </li>
         ))}
-      </div>
-    </>
+      </ul>
+    </div>
   );
 };
 
