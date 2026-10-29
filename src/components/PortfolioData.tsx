@@ -1,38 +1,13 @@
 import type {
-  EducationItemI,
   NowI,
   PrincipleI,
   ProjectItemI,
   ReleaseI,
   TechItemI,
-  WorkExperienceItemI,
 } from "@/lib/types";
-import {
-  SiAffinity,
-  SiBiome,
-  SiExcalidraw,
-  SiGithub,
-  SiGooglegemini,
-  SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiOpenai,
-  SiPostman,
-  SiPrisma,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
-import Firebase from "./icon/Firebase";
-import FigmaIcon from "./icon/FigmaIcon";
 import chatbotMockup from "@/assets/images/chatbot-mockup-cover.avif";
 import enrollEaseMockup from "@/assets/images/enrollease-mockup-cover.avif";
-import apstiiLogo from "@/assets/images/apstii-logo.avif";
-import freeLanceLogo from "@/assets/images/free-lance-logo.avif";
-import ifortLogo from "@/assets/images/ifort-logo.avif";
-import nerveTechnologiesLogo from "@/assets/images/nerve-technologies-logo.avif";
-import { LuBoxes, LuCode, LuRocket, LuUsers } from "react-icons/lu";
-import V0Icon from "./icon/V0Icon";
+
 /** The journey, oldest first. Drives the hero git log, the commit graph and the stage panels. */
 export const journeyData: ReleaseI[] = [
   {
@@ -175,111 +150,27 @@ export const nowData: NowI = {
 };
 
 export const techStackData: TechItemI[] = [
-  {
-    logo: (
-      <SiNextdotjs className="size-14 lg:size-20 transition-colors hover:text-foreground" />
-    ),
-    name: "Next.js",
-  },
-  {
-    logo: (
-      <SiReact className="size-14 lg:size-20 transition-colors hover:text-[#61DAFB]" />
-    ),
-    name: "React",
-  },
-  {
-    logo: (
-      <SiTypescript className="size-14 lg:size-20 transition-colors hover:text-[#3178C6]" />
-    ),
-    name: "TypeScript",
-  },
-  {
-    logo: (
-      <SiTailwindcss className="size-14 lg:size-20 transition-colors hover:text-[#06B6D4]" />
-    ),
-    name: "Tailwind CSS",
-  },
-  {
-    logo: (
-      <SiNodedotjs className="size-14 lg:size-20 transition-colors hover:text-[#339933]" />
-    ),
-    name: "Node.js",
-  },
-  {
-    logo: (
-      <SiPrisma className="size-14 lg:size-20 transition-colors hover:text-[#2D3748]" />
-    ),
-    name: "Prisma",
-  },
-  {
-    logo: (
-      <SiMongodb className="size-14 lg:size-20 transition-colors hover:text-[#47A248]" />
-    ),
-    name: "MongoDB",
-  },
-  {
-    logo: <Firebase />,
-    name: "Firebase",
-  },
+  { name: "next", role: "framework" },
+  { name: "react", role: "ui" },
+  { name: "typescript", role: "language" },
+  { name: "tailwindcss", role: "styling" },
+  { name: "node", role: "runtime" },
+  { name: "prisma", role: "orm" },
+  { name: "mongodb", role: "database" },
+  { name: "firebase", role: "backend" },
 ];
 
 export const devToolsData: TechItemI[] = [
-  {
-    name: "Figma",
-    logo: (
-      <FigmaIcon />
-    ),
-  },
-  {
-    name: "Postman",
-    logo: (
-      <SiPostman className="size-14 lg:size-20 transition-colors hover:text-[#FF6C37]" />
-    ),
-  },
-  {
-    name: "ChatGPT",
-    logo: (
-      <SiOpenai className="size-14 lg:size-20 transition-colors hover:text-[#10A37F]" />
-    ),
-  },
-  {
-    name: "Gemini",
-    logo: (
-      <SiGooglegemini className="size-14 lg:size-20 transition-colors hover:text-[#4285F4]" />
-    ),
-  },
-  {
-    name: "Affinity",
-    logo: (
-      <SiAffinity className="size-14 lg:size-20 transition-colors hover:text-[#7E4DD2]" />
-    ),
-  },
-  {
-    name: "Excalidraw",
-    logo: (
-      <SiExcalidraw className="size-14 lg:size-20 transition-colors hover:text-[#5A5AF7]" />
-    ),
-  },
-  {
-    name: "Biome",
-    logo: (
-      <SiBiome className="size-14 lg:size-20 transition-colors hover:text-[#1B67FF]" />
-    ),
-  },
-  {
-    name: "Github",
-    logo: (
-      <SiGithub className="size-14 lg:size-20 transition-colors hover:text-[#181717]" />
-    ),
-  },
-  {
-    name: "V0",
-    logo: (
-      <V0Icon />
-    ),
-  },
+  { name: "figma", role: "design" },
+  { name: "postman", role: "api testing" },
+  { name: "github", role: "version control" },
+  { name: "biome", role: "lint + format" },
+  { name: "excalidraw", role: "diagrams" },
+  { name: "affinity", role: "graphics" },
+  { name: "chatgpt", role: "ai" },
+  { name: "gemini", role: "ai" },
+  { name: "v0", role: "ai ui" },
 ];
-
 
 export const projectsData: ProjectItemI[] = [
   {
@@ -364,158 +255,23 @@ export const projectsData: ProjectItemI[] = [
   },
 ];
 
-export const workExperienceData: WorkExperienceItemI[] = [
+export const principlesData: PrincipleI[] = [
   {
-    role: "Junior Software Engineer",
-    company: "iFort",
-    logo: ifortLogo,
-    location: "Remote (Perth, Western Australia)",
-    period: "February 2026 - July 2026",
-    duration: "5 months",
-    current: false,
-    description:
-      "Developed features for a Next.js platform built on a microservices architecture, taking problems from initial discussion through to a shipped solution.",
-    achievements: [
-      "Collaborated directly with employees to understand their problems and independently developed the solution as a new feature on the platform, owning the full process from requirements to delivery",
-      "Implemented features from GitHub issue descriptions assigned by a senior engineer when direct client discussion was not required",
-      "Contributed to a Next.js application built on a microservices architecture",
-      "Integrated AI tools such as GitHub Copilot, Claude, and Antigravity into daily development, becoming comfortable building AI into the workflow",
-    ],
-    technologies: [
-      "Next.js",
-      "Microservices",
-      "GitHub",
-      "GitHub Copilot",
-      "Claude",
-      "Antigravity",
-    ],
-  },
-  {
-    role: "Full Stack Web Developer",
-    company: "Nerve Technologies",
-    companyUrl: "https://nerve-technologies.com/",
-    logo: nerveTechnologiesLogo,
-    location: "Remote",
-    period: "December 2025 - February 2026",
-    duration: "3 months",
-    current: false,
-    description:
-      "Built frontend features and backend services across the stack, working alongside designers and taking part in code reviews to ship reliable, pixel-accurate releases.",
-    achievements: [
-      "Built frontend features and backend services, including secure authentication and RESTful CRUD APIs, using AI pair-programming tools to speed up implementation and testing",
-      "Partnered with designers to deliver pixel-accurate UI and took part in code reviews that reduced post-release bugs",
-    ],
-    technologies: [
-      "REST APIs",
-      "Authentication",
-      "AI Pair Programming",
-      "Code Review",
-    ],
-  },
-  {
-    role: "Freelance Web Developer",
-    company: "Self-Employed",
-    logo: freeLanceLogo,
-    location: "Remote",
-    period: "2024 - 2025",
-    duration: "2 years",
-    current: false,
-    description:
-      "Developed and maintained a variety of web applications, including full-stack projects using Next.js, React frontends, and Django backends, delivering secure, scalable, and performant solutions tailored to client needs.",
-    achievements: [
-      "Built full-stack applications using Next.js with TypeScript, integrating frontend and backend seamlessly",
-      "Developed dynamic frontend applications using React",
-      "Created backend services and APIs with Django",
-      "Integrated Clerk for authentication and user management",
-      "Designed and managed databases using PostgreSQL and Prisma ORM",
-      "Collaborated with clients to gather requirements and deliver tailored solutions",
-    ],
-    technologies: [
-      "Next.js",
-      "React.js",
-      "TypeScript",
-      "TailwindCSS",
-      "Bootstrap",
-      "Django",
-      "Python",
-      "Clerk",
-      "Prisma ORM",
-      "PostgreSQL",
-    ],
-  },
-  {
-    role: "Information Technology Intern",
-    company:
-      "Archipelago Philippine Seafarers’ Training Institute, Inc. (APSTII)",
-    companyUrl: "https://apstii.com/",
-    logo: apstiiLogo,
-    location: "Las Piñas City, Philippines",
-    period: "April 2025 - June 2025",
-    duration: "3 months",
-    current: false,
-    description:
-      "Supported the IT department in managing trainee data, troubleshooting basic technical issues, and maintaining the company’s digital records. Contributed to documentation processes and gained hands-on experience in IT operations within an office environment.",
-    achievements: [
-      "Encoded and organized digital records for trainee registration and attendance monitoring",
-      "Assisted in troubleshooting basic computer and network issues within the department",
-      "Assisted in inputting trainee information to the company’s database and document tracking system",
-      "Observed and learned IT administrative procedures and proper documentation practices",
-    ],
-    technologies: ["Microsoft Office", "Google Drive"],
-  },
-];
-
-export const educationData: EducationItemI[] = [
-  {
-    degree: "Bachelor of Science",
-    field: "Information Technology",
-    institution: "Cavite State University - Bacoor Campus",
-    location: "Cavite, Philippines",
-    period: "2021 — 2025",
-    description:
-      "Focused on Object-Oriented Programming, Data Structures, and Human–Computer Interaction, with interests in Machine Learning applications.",
-    achievements: ["Graduated with Latin honors, Cum Laude"],
-  },
-  {
-    degree: "Technical-Vocational Livelihood",
-    field: "Information and Communication Technology",
-    institution: "AMA Computer College - Las Piñas",
-    location: "Las Piñas City, Philippines",
-    period: "2019 — 2021",
-    description:
-      "Studied Java development, networking fundamentals, and web technologies with an emphasis on software design and user experience.",
-    achievements: ["Graduated with High Honors"],
-  },
-  {
-    degree: "High School Diploma",
-    field: "General Education",
-    institution: "Las Piñas National High School – Almanza",
-    location: "Las Piñas City, Philippines",
-    period: "2015 — 2019",
-  },
-];
-
-export const myPrinciplesData: PrincipleI[] = [
-  {
-    icon: <LuCode className="h-6 w-6 text-primary" />,
-    title: "Code Craftsmanship",
+    title: "Code craftsmanship",
     description:
       "Writing clean, maintainable, and expressive code that balances readability with performance.",
   },
   {
-    icon: <LuBoxes className="h-6 w-6 text-primary" />,
-    title: "Structured Design",
+    title: "Structured design",
     description:
       "Building applications with clear layers, defined responsibilities, and minimal coupling.",
   },
   {
-    icon: <LuRocket className="h-6 w-6 text-primary" />,
-    title: "Make It Work, Make It Right, Make It Fast",
+    title: "Make it work, make it right, make it fast",
     description:
       "Focusing on correctness first, refining for clarity next, and optimizing for performance only when it truly matters.",
   },
   {
-    icon: <LuUsers className="h-6 w-6 text-primary" />,
     title: "Collaboration",
     description:
       "Working closely with teams and clients to translate technical decisions into meaningful product value.",

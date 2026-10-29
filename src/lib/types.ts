@@ -1,29 +1,3 @@
-export interface EducationItemI {
-  degree: string
-  field: string
-  institution: string
-  location: string
-  period: string
-  description?: string
-  achievements?: string[]
-}
-
-export interface WorkExperienceItemI {
-  role: string
-  company: string
-  /** Optional company website. When set, the company name renders as a link. */
-  companyUrl?: string
-  logo: string
-  location: string
-  period: string
-  duration: string
-  current: boolean
-  description: string
-  achievements: string[]
-  technologies: string[]
-
-}
-
 export interface ProblemSolutionI {
   title: string;
   problem: string;
@@ -41,25 +15,6 @@ export interface ProjectItemI {
   liveLink?: string
   techStack: string[]
   problemsAndSolutions?: ProblemSolutionI[]
-}
-
-type NavNames = 'Home' | 'Experience' | 'Education' | 'Tech Stack' | 'Projects' | 'About Me'
-export interface NavItemI {
-  name: NavNames
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  fn: () => void
-  id: string
-}
-
-export interface TechItemI {
-  logo: React.ReactNode
-  name: string
-}
-
-export interface PrincipleI {
-  icon: React.ReactNode
-  title: string
-  description: string
 }
 
 /** Commit-message prefix shown before a release title, e.g. "release: City of Bacoor Chatbot" */
@@ -103,4 +58,15 @@ export interface NowFactI {
 export interface NowI {
   headline: string
   facts: NowFactI[]
+}
+
+/** A tool rendered as a package.json entry: "name": "role" */
+export interface TechItemI {
+  name: string
+  role: string
+}
+
+export interface PrincipleI {
+  title: string
+  description: string
 }
