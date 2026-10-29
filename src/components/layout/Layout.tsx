@@ -1,34 +1,23 @@
-import { useRefs } from "@/context/useRefs";
-import FloatingNav from "../controls/FloatingNav";
-import ScreenSizeIndicator from "../ScreenSizeIndicaator";
-import { Outlet } from "react-router";
-import { socialContacts } from "@/lib/constants";
+import { Outlet, ScrollRestoration } from "react-router";
+import SiteNav from "../controls/SiteNav";
 import FooterSection from "../section/FooterSection";
-import BlobBackground from "../BlobkBackground";
 
 const Layout = () => {
-  const { aboutMeRef, techStackRef, projectRef, experienceRef, educationRef } = useRefs();
-
   return (
-    <main className="min-h-[100vh]">
-      <BlobBackground />
-      <ScreenSizeIndicator />
-      <FloatingNav
-        aboutMeRef={aboutMeRef}
-        techStackRef={techStackRef}
-        projectRef={projectRef}
-        experienceRef={experienceRef}
-        educationRef={educationRef}
-      />
-      <div className="max-w-6xl mx-auto px-6 space-y-36 relative z-10">
+    <>
+      <a
+        href="#main"
+        className="sr-only z-[60] rounded-md bg-primary px-3 py-2 font-mono text-sm text-primary-foreground focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      >
+        Skip to content
+      </a>
+      <SiteNav />
+      <main id="main" className="min-h-[calc(100svh-3.5rem)]">
         <Outlet />
-      </div>
-      <FooterSection
-        email={socialContacts.gmail}
-        githubLink={socialContacts.github}
-        linkedInLink={socialContacts.linkedIn}
-      />
-    </main>
+      </main>
+      <FooterSection />
+      <ScrollRestoration />
+    </>
   );
 };
 

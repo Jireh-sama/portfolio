@@ -1,30 +1,42 @@
-import EducationSection from "../section/EducationSection";
+import { useEffect } from "react";
+import { useLocation } from "react-router";
 import HeroSection from "../section/HeroSection";
-import WorkExperienceSection from "../section/WorkExperienceSection";
-import MyTechStackSection from "../section/MyTechStackSection";
-import ProjectSection from "../section/ProjectSection";
-import SimpleDivider from "../layout/SimpleDIvider";
-import { useRefs } from "@/context/useRefs";
-import AboutMeSection from "../section/AboutMeSection";
-import { educationData, projectsData, techStackData, workExperienceData, myPrinciplesData, devToolsData } from "../PortfolioData";
+import JourneySection from "../section/JourneySection";
+import NowSection from "../section/NowSection";
+import ContactSection from "../section/ContactSection";
+import { scrollToId } from "@/lib/journey";
+import {
+  devToolsData,
+  journeyData,
+  nowData,
+  principlesData,
+  projectsData,
+  techStackData,
+} from "../PortfolioData";
+
 const Home = () => {
-  const { aboutMeRef, techStackRef, projectRef, experienceRef, educationRef } = useRefs();
-  
+  const { hash } = useLocation();
+
+  // Arriving at /#section from another page: scroll once the journey pin has been laid out.
+  useEffect(() => {
+    if (!hash) return;
+    const frame = requestAnimationFrame(() => scrollToId(decodeURIComponent(hash.slice(1))));
+    return () => cancelAnimationFrame(frame);
+  }, [hash]);
+
   return (
     <>
-      <HeroSection />
-      <AboutMeSection principleList={myPrinciplesData} ref={aboutMeRef}/>
-      <SimpleDivider title="TECH STACK" />
-      <MyTechStackSection techStackList={techStackData} devToolsList={devToolsData} ref={techStackRef} />
-      <SimpleDivider title="PROJECTS" />
-      <ProjectSection ref={projectRef} projectList={projectsData} />
-      <SimpleDivider title="WORK EXPERIENCE" />
-      <WorkExperienceSection
-        workExperienceList={workExperienceData}
-        ref={experienceRef}
+      <HeroSection releases={journeyData} />
+      <JourneySection releases={journeyData} projects={projectsData} />
+      <NowSection
+        now={nowData}
+        latestTag={journeyData[journeyData.length - 1].tag}
+        projectCount={projectsData.length}
+        dependencies={techStackData}
+        devDependencies={devToolsData}
+        principles={principlesData}
       />
-      <SimpleDivider title="EDUCATION" />
-      <EducationSection educationList={educationData} ref={educationRef} />
+      <ContactSection />
     </>
   );
 };

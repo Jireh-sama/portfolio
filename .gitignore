@@ -26,3 +26,6 @@ dist-ssr
 # Ignore environment files
 .env
 .env.*
+
+# Brainstorming companion mockups
+.superpowers/
